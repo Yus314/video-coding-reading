@@ -1,0 +1,136 @@
+{
+  "paper_id": "P12",
+  "title": "DCVC-RT Table 3(b) A100 fp16速度の測定境界監査",
+  "language": "ja",
+  "selected_claim": {
+    "text": "1920×1080のDCVC-RT(fp16)はA100で符号化125.2 fps、復号112.8 fps（著者報告）。",
+    "locator": "CVPR2025本文 PDF p.8 Table 3(b); p.7 §5.1",
+    "reported_encoding_fps": 125.2,
+    "reported_decoding_fps": 112.8,
+    "decision": "条件を狭めた著者報告として使用可。独立再現済み又は製品end-to-end性能としては使用不可。",
+    "not_selected": "int16速度とBD-rateの独立数値再現は対象外。精度違いの数値を混用しない。"
+  },
+  "initial_unknown": "comparison-conditions.json P12 / comparison-memo.md が未監査としていた、全処理時間の測定境界。",
+  "inspected_code": {
+    "repository": "https://github.com/microsoft/DCVC",
+    "commit": "cbdae87a5445114cdc7f48816da63ea80bdeac40",
+    "commit_date": "2026-08-25T02:39:49Z",
+    "subdirectory": "DCVC-family/DCVC-RT",
+    "discovery": "GitHub mainのcommit APIからSHAを取得し、そのSHAのrecursive treeとrawファイルを取得。現行rootと旧DCVC-RT subtreeを区別した。cloneなし。",
+    "same_as_paper_snapshot": "未確認。論文当時の実験commit・重み・raw timing logsとの対応は立証していない。",
+    "metadata_url": "https://api.github.com/repos/microsoft/DCVC/commits/main",
+    "pinned_commit_url": "https://github.com/microsoft/DCVC/commit/cbdae87a5445114cdc7f48816da63ea80bdeac40"
+  },
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Jia_Towards_Practical_Real-Time_Neural_Video_Compression_CVPR_2025_paper.pdf",
+      "locator": "PDF p.7 §5.1 / Table 2; p.8 Table 3(a,b)",
+      "supports": "A100 + AMD EPYC 7V13、1080p、異なるqpで平均latency。Table 3(b)のfp16速度。"
+    },
+    {
+      "id": 2,
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/supplemental/Jia_Towards_Practical_Real-Time_CVPR_2025_supplemental.pdf",
+      "locator": "PDF pp.2–3 §2.3 / Fig.1; p.4 §3.3; p.5 Table 5",
+      "supports": "推論とentropy codingを並列化。通常のencodingでreconstruction generation省略。module latencyの単純合計は全体時間ではない。"
+    },
+    {
+      "id": 3,
+      "url": "https://raw.githubusercontent.com/microsoft/DCVC/cbdae87a5445114cdc7f48816da63ea80bdeac40/DCVC-family/DCVC-RT/README.md",
+      "locator": "L55–72, L96–107",
+      "supports": "CPU arithmetic coding、custom CUDA kernels、速度計測verbose条件とI/O・distortion除外の明記。"
+    },
+    {
+      "id": 4,
+      "url": "https://raw.githubusercontent.com/microsoft/DCVC/cbdae87a5445114cdc7f48816da63ea80bdeac40/DCVC-family/DCVC-RT/test_video.py",
+      "locator": "L74–91, L150–154, L173–247, L261–318, L326–344, L398–414, L489–496",
+      "supports": "計時境界・同期・先頭10フレーム除外・fp16・configの適用。"
+    },
+    {
+      "id": 5,
+      "url": "https://raw.githubusercontent.com/microsoft/DCVC/cbdae87a5445114cdc7f48816da63ea80bdeac40/DCVC-family/DCVC-RT/dataset_config_example_yuv420.json",
+      "locator": "test_classes.*.sequences.*.intra_period / frames",
+      "supports": "有効な53系列すべてintra_period=-1。fps表専用の実験manifestと断定しない。"
+    },
+    {
+      "id": 6,
+      "url": "https://raw.githubusercontent.com/microsoft/DCVC/cbdae87a5445114cdc7f48816da63ea80bdeac40/DCVC-family/DCVC-RT/src/models/video_model.py",
+      "locator": "DMC.prepare_feature_adaptor_i L293–297; compress L299–341; decompress L343–376",
+      "supports": "実entropy bitstream生成と並列処理、通常P encodingの再構成省略、refresh時は再構成がある。"
+    },
+    {
+      "id": 8,
+      "url": "https://raw.githubusercontent.com/microsoft/DCVC/cbdae87a5445114cdc7f48816da63ea80bdeac40/DCVC-family/DCVC-RT/src/utils/common.py",
+      "locator": "generate_log_json L163–168",
+      "supports": "avg_frame_encoding_time/decoding_timeに秒単位の平均時間を保存。"
+    }
+  ],
+  "resolved_uncertainties": [
+    {
+      "issue": "速度はNN inferenceだけか",
+      "resolution": "補足はentropy codingを含む並列pipelineを説明し、検査commitのP compressもencode_z/encode_y/flush/get_encoded_streamを計時内で実行する。GPU推論だけの速度とは読まない。",
+      "source_ids": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "issue": "全I/O込みのend-to-endか",
+      "resolution": "検査commitでは入力読み込み・YUV upsampling/転送/fp16変換は計時前、bitstream disk write/readは両計時区間の外。出力色変換・PSNR/SSIM・再構成ファイル保存も復号計時後。padding、メモリ内header処理、codec、CUDA同期、cropは計時内。",
+      "scope": "確認した公開実装の境界。論文snapshotの完全な同一性は未確定。",
+      "source_ids": [
+        3,
+        4
+      ]
+    },
+    {
+      "issue": "初回フレームとwarmup",
+      "resolution": "検査commitでは先頭10フレームを速度平均から除外。intra_period=-1では先頭I frameが速度平均に残らない。RD集計自体は全frameで、速度とRDの対象frameを同一視しない。verbose>=1かつframe数>10で平均時間を出力。",
+      "source_ids": [
+        4,
+        5,
+        8
+      ]
+    },
+    {
+      "issue": "encodingがdecodingより速い理由",
+      "resolution": "補足§2.3とコードは通常P encodingでreconstruction generationを省略。feature refresh時のprepare_feature_adaptor_iでは再構成し得るため『encodingでは常に省略』は誤り。",
+      "source_ids": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "issue": "README例をそのまま速度測定に使えるか",
+      "resolution": "例は--verbose 0なので平均時間を保存しない。--verbose 1が必要。例のreset_interval=64とparser既定値32も異なる。--force_intra_period -1は既存configを強制上書きせず、検査config自体が-1なのでsingle-intraになる。",
+      "source_ids": [
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "bounded_actual_checks": {
+    "exit_code": 0,
+    "static_assertions_passed": 13,
+    "scope": "ダウンロードしたコードのAST/文字列/config検査と報告fpsの逆数換算。codecをimport/実行していない。モデル・GPUベンチマークではない。",
+    "arithmetic": {
+      "formula": "1000 / reported_fps",
+      "encoding_ms_per_frame": 7.987220447284344,
+      "decoding_ms_per_frame": 8.865248226950355,
+      "interpretation": "報告値の単位換算のみ。raw latencyの再現・速度平均の集約方式の立証ではない。"
+    },
+    "pdf_check": "CVF公式landing pageから補足URLを取得。本文10頁・補足7頁を保存しpypdfでテキスト化。web_extractとも対象数値と節を照合。グラフから自動生成された数値表は不使用。"
+  },
+  "remaining_gaps": [
+    "論文速度表を生成したexact commit、checkpoint digest、CUDA/cuDNN/PyTorch版と実行コマンド。READMEの現在の前提環境は論文環境だと断定できない。",
+    "Table 3(b)速度測定に用いた系列名、各qp、frame範囲、繰返し数、系列/qp間の重み、latency平均からfpsへの厳密な集約手順。公開configは一つの例であり実験manifestとは証明できない。",
+    "raw timing logsやGPU実行による125.2/112.8 fpsの独立再現。この監査では取得/実行していない。",
+    "int16実装経路と28.3/20.9 fpsの検証。この監査はfp16パスに限定し、公開repo全体にint16実装が存在しないとは主張しない。",
+    "BD-rate -21.0%/-18.3%のRD点・補間・集約の独立再計算は未実施。"
+  ],
+  "recommended_public_wording": "DCVC-RT論文Table 3(b)は、NVIDIA A100（標準CPU: AMD EPYC 7V13）で1920×1080・fp16の平均符号化/復号速度125.2/112.8 fpsを報告する。補足と確認した公開DCVC-RT実装はentropy codingを含むcodec処理を裏付けるが、公開実装の速度計測は入力/出力I/Oや画質計算を除き、先頭10フレームも除外する。これは製品end-to-end速度やint16の性能ではなく、当該実装commitが論文実験snapshotと同一であること及び報告fpsの独立再現は未確認である。",
+  "checked_on": "2026-09-24"
+}

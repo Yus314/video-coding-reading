@@ -1,0 +1,38 @@
+{
+  "checked_on": "2026-09-24",
+  "scope": "原図をPDFから画像化して目視。図の限定的な読解確認であり実装・性能再現ではない。原図画像/PDFは公開しない。",
+  "figures": [
+    {
+      "paper": "P07",
+      "version": "arXiv:1802.01436v2",
+      "url": "https://arxiv.org/pdf/1802.01436v2",
+      "locator": "Fig.3 / PDF p.5",
+      "observed": "operational diagramでyからhyper analysisへ分岐しzを作る。U|Qの表記があり、訓練用ノイズと量子化を同時に実行する直列ブロックと解釈しない。",
+      "reading_action": "Fig.3で変数の生成関係を読み、実際のbitstreamと復号順はFig.4で追う。"
+    },
+    {
+      "paper": "P07",
+      "version": "arXiv:1802.01436v2",
+      "url": "https://arxiv.org/pdf/1802.01436v2",
+      "locator": "Fig.4 / PDF p.6",
+      "observed": "yとzそれぞれにQ→AE→bitstream→ADがある。zのADからh_sを経て得るsigmaがy側のAE/ADへ点線で供給される。",
+      "reading_action": "受信側からzのAD→h_s→sigma→yのAD→g_sを追う。左側の画像変換器だけで完結すると読まない。"
+    },
+    {
+      "paper": "P10",
+      "version": "NeurIPS 2021 proceedings",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf",
+      "locator": "Fig.4 / PDF p.6",
+      "observed": "hyperprior decoder、auto regressive、temporal prior encoderがprior fusionへ入り、mean/scaleがy側AE/ADへ供給される。hyperlatentとyに別のbitstreamが描かれる。",
+      "reading_action": "三つのpriorを区別する。図の左から右への矢印だけで全latentを並列復号できると解釈せず、本文の既復号要素への依存を参照する。"
+    },
+    {
+      "paper": "P04",
+      "version": "arXiv:2008.06091v2",
+      "url": "https://arxiv.org/pdf/2008.06091v2",
+      "locator": "Fig.31 / PDF p.17",
+      "observed": "Decoded Frame→Deblocking→CDEF→Loop Restoration→Reference Frame Buffer。loop restoration後からFilm Grain Synthesis→Display Pictureへ別枝がある。この図にはsuper-resolutionのブロックは描かれていない。",
+      "reading_action": "参照に使う画像と表示用画像の分岐を読む用途に限定。規範的な全復号順序の完全図として使わない。"
+    }
+  ]
+}

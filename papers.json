@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "release": "reading-decisions-3",
+  "release": "independent-evidence-4",
   "scope": "登録候補20論文＋補助資料3件。目的限定の追加参照はscreening.jsonとfollowup-review.mdに分離。必読順位・網羅調査ではない。",
   "papers": [
     {
@@ -549,14 +549,14 @@
       "reason_to_read": "圧縮率以外の実装コストとデバイス間整合性を読む。",
       "reading_question": "演算量削減だけで速度が上がるか。整数化すると何を失い何を得るか。",
       "marginal_value": "P10系統の後続を、単なるRD改善でなく実用性の観点で選定する。",
-      "limitations": "A100・fp16の値を全GPUやint16に流用しない。コードの実行再現は未実施。",
-      "evidence_depth": "本文の構造・実験条件確認",
+      "limitations": "A100・fp16の著者報告。確認した公開実装はI/O・画質計算・先頭10フレームを速度平均から除外。論文実験snapshotとの同一性と数値再現は未確認。evidence-audit.md参照。",
+      "evidence_depth": "本文・補足の指定節と公開実装の静的確認（GPU再現なし）",
       "evidence_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Jia_Towards_Practical_Real-Time_Neural_Video_Compression_CVPR_2025_paper.pdf",
-      "evidence_locator": "CVPR paper §5.1; Tables 2–3; Fig.5(c)",
+      "evidence_locator": "CVPR paper §5.1; Tables 2–3; Fig.5(c); supplementary §2.3; public DCVC-RT test_video.py L173–333 (commit cbdae87a5445114cdc7f48816da63ea80bdeac40)",
       "status": "候補・利用者未読状態は未確認",
       "selected_by": "assistant",
       "code_reproduced": false,
-      "checked_on": "2026-09-23",
+      "checked_on": "2026-09-24",
       "discovery_route": "前回答の多様な種",
       "queue": "目的別経路",
       "required_background": [

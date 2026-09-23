@@ -1,0 +1,320 @@
+{
+  "purpose": "既存コレクションの選定偏りを検証するための独立した小規模候補集合",
+  "independence": "独立候補生成者は親の既存候補集合・リポジトリを閲覧せず、公開検索を概念・制約・規格・信号処理・実装・評価の問題から開始した。一般的な確認手順は専門スキルを参照。生成後に親側が既存集合と照合し、各comparison_with_existingに判断を記録した。",
+  "claim_boundary": "網羅的リストでも、必読についての合意を示すリストでもない。読む役割・選定理由・読了判定は選定者の教育的判断である。全文精読・実装再現・数値結果の再検証はしていない。",
+  "discovery_method": {
+    "problem_based_searches": [
+      "D1: ハイブリッド予測・変換・量子化・RDO",
+      "D2: 規格の復号器と符号化器設計",
+      "D3: 低遅延・実時間・複雑度・バッファ制約",
+      "D4: 主観/客観評価とBD-rateの落とし穴",
+      "D5: x265の低遅延・並列処理・lookahead・VBV",
+      "D6: ITUのH.265規格入口"
+    ],
+    "later_title_verification": [
+      "V1: D3で発見した遅延トレードオフ論文の書誌・機関公開版確認",
+      "V2: D1で発見したRDO論文の書誌・読める本文確認"
+    ],
+    "note": "タイトル検索は初期候補の発見ではなく、その後の同定・引用確認に利用した。D5は実装を指定した問題検索、D6は規格番号を指定した一次情報検索である。"
+  },
+  "candidates": [
+    {
+      "id": "IC01",
+      "title": "Block-Based Hybrid Video Coding",
+      "bibliography": "Yao Wang, Image and Video Processing / ECE-GY 6123, New York University, 2023, 講義資料",
+      "bibliographic_url": "https://bpb-us-e1.wpmucdn.com/wp.nyu.edu/dist/b/10258/files/2023/04/Videocoding.pdf",
+      "discovery": {
+        "search_id": "D1",
+        "route": "ハイブリッド予測・変換・量子化を尋ねた問題検索で発見"
+      },
+      "verification_route": "同PDFの抽出本文で著者・年度・科目と選択部分を確認。別のタイトル検索はしていない。",
+      "checked_scope": "予測、双方向予測、閉ループ構成、符号化器/復号器の一致、残差の変換符号化の入口、末尾のLagrange係数・deadzone量子化説明をテキスト確認。中間省略があり全文精読ではない。図は視覚確認していない。",
+      "reading_role": "論文の前に、予測→残差→量子化→再構成→参照という基本構造の概念地図を作る。",
+      "important_concepts": [
+        "閉ループ予測とドリフト",
+        "イントラ/インター予測",
+        "表示順と符号化順",
+        "予測残差の変換と量子化",
+        "付加情報の符号量",
+        "GOPと双方向予測の遅延"
+      ],
+      "selection_reason": "新方式の性能表から入らず、何を送るか・なぜ復号済み参照が必要かを説明できる候補を入れるため。",
+      "reading_gate": {
+        "focus": "閉ループ予測と双方向予測の説明",
+        "skip_if": "同じ構成を自分で図解できる",
+        "exit_check": "予測誤差を小さくすることと総符号量を小さくすることの違いを説明する",
+        "return_trigger": "新方式の参照信号・残差・再構成の関係を追えない"
+      },
+      "limitations": "査読論文ではなく教材。教材の数値例や簡略化を一般性能保証として採用しない。",
+      "decision": "教材の代替",
+      "comparison_with_existing": "P01/P02の説明で止まる場合だけ閉ループ予測の補助教材にする。全員の前提には増やさない。"
+    },
+    {
+      "id": "IC02",
+      "title": "Rate-Distortion Optimization for Video Compression",
+      "bibliography": "Gary J. Sullivan and Thomas Wiegand, IEEE Signal Processing Magazine, 15(6), 74–90, 1998",
+      "bibliographic_url": "https://cris.fau.de/publications/109995644/?lang=en_GB",
+      "text_url": "https://web.stanford.edu/class/ee398a/handouts/papers/Sullivan%20-%20RD%20Opt%20for%20Video.pdf",
+      "discovery": {
+        "search_id": "D1",
+        "route": "RDOを含む問題検索の結果として論文公開コピーを発見"
+      },
+      "verification_route": "V2でタイトル検索を行い、FAU研究情報ページで著者・誌名・巻号・ページ・年を照合。最初のIMT公開コピーは抽出品質が悪く、Stanford授業公開コピーに切り替えた。",
+      "checked_scope": "FAU書誌、Stanfordコピーの冒頭、制約付き最適化からLagrangianへの説明、近似と意思決定の依存、Bit-Rate Control、Motion Estimationの本文を選択確認。抽出式には欠落・乱れがあり式の完全性は未検証。",
+      "reading_role": "符号化ツールの列挙を、符号量・歪み・探索計算量を伴う意思決定問題として読み替える。",
+      "important_concepts": [
+        "レート制約と歪み最小化",
+        "Lagrange乗数",
+        "モード選択と動きベクトルの符号量",
+        "量子化刻みとレート制御",
+        "時空間の意思決定依存",
+        "近似探索と計算時間"
+      ],
+      "selection_reason": "理論上の最適化と実装上の妥協を結びつけ、単に低い残差を選べばよいという理解を修正できるため。",
+      "reading_gate": {
+        "focus": "最適化・Bit-Rate Control・Motion Estimation",
+        "skip_if": "局所RDOと全系列最適化の違いを説明できる",
+        "exit_check": "動き探索で残差だけでなく動き情報のレートを考慮する理由を説明する",
+        "return_trigger": "lambda/QPや探索削減の提案を評価する"
+      },
+      "limitations": "古い規格の例に基づく。Stanfordの公開授業コピーであり、著者版との同一性・再配布許諾は別途確認が必要。現代実装への数値の直接移植はしない。",
+      "decision": "維持",
+      "comparison_with_existing": "既存P06と同一論文。意思決定原理の入口として維持し、重複登録しない。"
+    },
+    {
+      "id": "IC03",
+      "title": "High efficiency video coding",
+      "bibliography": "ITU-T Recommendation H.265 (01/2026), approved 2026-01-13",
+      "bibliographic_url": "https://www.itu.int/rec/T-REC-H.265-202601-I",
+      "discovery": {
+        "search_id": "D6",
+        "route": "規格の一次情報を補うためITUとH.265を指定して発見"
+      },
+      "verification_route": "ITUの版別書誌ページで版・承認日・In force表示・無料PDF入口を確認。",
+      "checked_scope": "書誌・公開状態・目次/要約/PDFへのリンクのみ。規格PDF本文、構文/意味対、規範的復号手続は未確認。",
+      "reading_role": "解説・エンコーダ実装・規範文書を混同しないための一次参照先。通読の推奨ではなく疑問点を引くための候補。",
+      "important_concepts": [
+        "規格適合性",
+        "構文と意味の対応",
+        "復号処理",
+        "規格の版管理"
+      ],
+      "selection_reason": "論文が説明する設計意図と、相互運用に必要な規範を切り分ける入口を確保するため。",
+      "reading_gate": {
+        "focus": "次段階で必要な構文と意味を一対選び、規範本文を照合",
+        "skip_if": "概念入門だけが目的",
+        "exit_check": "引用した規範の版と位置を特定する",
+        "return_trigger": "実装間の復号差異や準拠性を調べる"
+      },
+      "limitations": "概念項目は読む目的であって今回本文から実証した内容ではない。承認日とWeb掲載日を混同しない。",
+      "decision": "規範参照",
+      "comparison_with_existing": "HEVCの厳密な構文が必要な時の入口。本文未確認なので今回の読了経路には入れない。"
+    },
+    {
+      "id": "IC04",
+      "title": "High Efficiency Video Coding (HEVC): Algorithms and Architectures",
+      "bibliography": "Vivienne Sze, Madhukar Budagavi, Gary J. Sullivan (eds.), Springer, 1st edition, 2014, DOI: 10.1007/978-3-319-06895-4",
+      "bibliographic_url": "https://link.springer.com/book/10.1007/978-3-319-06895-4",
+      "discovery": {
+        "search_id": "D2",
+        "route": "規格の復号器・符号化器設計を尋ねる問題検索で発見"
+      },
+      "verification_route": "出版社ページで編集者・版・年・目次・各章ページ範囲を確認。",
+      "checked_scope": "出版社の書誌・紹介・目次。章本文は未読であり、アーキテクチャ・ブロック分割・フィルタ本文を確認済みとは扱わない。",
+      "reading_role": "規格の道具とハードウェア設計を橋渡しする参照書候補。章本文確認前の仮選定。",
+      "important_concepts": [
+        "ブロック構造と並列性",
+        "イントラ/インター予測",
+        "変換と量子化",
+        "インループフィルタ",
+        "エントロピー符号化",
+        "符号化器/復号器ハードウェア構成"
+      ],
+      "selection_reason": "目次に信号処理だけでなく並列性・エンコーダ/デコーダハードウェアの章があり、論文のRD改善だけでは見えにくい実装制約を点検する入口になるため。",
+      "reading_gate": {
+        "focus": "次段階でBlock Structures and Parallelism Features、In-Loop Filters、Hardware Architecture章の本文を確認してから読む順序を決める",
+        "skip_if": "HEVC固有の実装を必要としない",
+        "exit_check": "処理依存と並列化の関係を本文に基づいて説明する",
+        "return_trigger": "スループットやハードウェア実装制約を検討する"
+      },
+      "limitations": "出版社ページは公開されているが書籍全文は購読コンテンツ。全候補が無料全文という意味ではない。HEVCへの偏りを残す候補でもある。",
+      "decision": "保留",
+      "comparison_with_existing": "ハードウェア設計の不足を示すが章本文未確認。目次だけで具体的な章の理解成果を保証しない。"
+    },
+    {
+      "id": "IC05",
+      "title": "Compression Efficiency and Delay Tradeoffs for Hierarchical B-Pictures and Pulsed-Quality Frames",
+      "bibliography": "Athanasios Leontaris and Pamela C. Cosman, IEEE Transactions on Image Processing, 16(7), 1726–1740, July 2007, DOI: 10.1109/TIP.2007.896681",
+      "bibliographic_url": "https://doi.org/10.1109/tip.2007.896681",
+      "text_url": "https://escholarship.org/content/qt3bb5z9tm/qt3bb5z9tm.pdf?t=n5twts",
+      "discovery": {
+        "search_id": "D3",
+        "route": "低遅延・実時間・レート制御・バッファ制約の問題検索で発見"
+      },
+      "verification_route": "V1で論文を同定。UCの機関リポジトリPDF表紙と著者所属機関プロフィールの書誌を照合。リポジトリHTML抽出は失敗したがPDF抽出は成功。",
+      "checked_scope": "機関リポジトリ表紙、要旨、序論と初期本文。全実験・数式導出・結果の再計算は未実施。",
+      "reading_role": "時間制約を、単なるエンコードfpsではなく入力待ち・出力バッファ・参照構造・ビット配分の問題として扱う。",
+      "important_concepts": [
+        "end-to-end delay",
+        "階層Bピクチャ",
+        "入力バッファと出力バッファ",
+        "フレーム間ビット配分",
+        "予測距離",
+        "予測枝の切り詰め"
+      ],
+      "selection_reason": "高圧縮率と低遅延が同じ目的でないことを、構造とバッファの両面から検討する独立軸を作るため。",
+      "reading_gate": {
+        "focus": "遅延の構成要素と予測構造の関係",
+        "skip_if": "オフライン保存だけを扱い遅延制約がない",
+        "exit_check": "入力待ち時間とビット平滑化による待ち時間を区別する",
+        "return_trigger": "低遅延設定でRD性能が変化する"
+      },
+      "limitations": "H.264時代の研究。提示された遅延目標や比較優劣を現在の全用途に一般化しない。",
+      "decision": "目的限定参照",
+      "comparison_with_existing": "P16の未来参照設計とは別に、入力待ちと出力バッファによる遅延を学ぶ時に参照。現在の性能順位には使わない。"
+    },
+    {
+      "id": "IC06",
+      "title": "x265 Documentation — Preset Options",
+      "bibliography": "x265 project documentation, stable branch, Web documentation",
+      "bibliographic_url": "https://x265.readthedocs.io/en/stable/presets.html",
+      "discovery": {
+        "search_id": "D5",
+        "route": "実装の低遅延・lookahead・VBV・並列処理を問う検索で発見"
+      },
+      "verification_route": "公式プロジェクト文書のPresets、Tuning、Zero Latency本文を抽出確認。",
+      "checked_scope": "プリセット表、品質/速度の説明、psnr/ssim tune説明、zerolatencyの設定とframe threadsの遅延説明を確認。コード・実機動作・VBV節の本文は未検証。stableの特定リリース/コミット対応は未確定。",
+      "reading_role": "論文の概念を、実際のエンコーダの探索量・評価設定・待ち行列の設定に接続する。",
+      "important_concepts": [
+        "速度と圧縮効率のトレードオフ",
+        "presetとtuneの違い",
+        "lookahead",
+        "B frames",
+        "frame parallelism",
+        "客観指標向け調整と知覚品質向け調整"
+      ],
+      "selection_reason": "規格名が同じでもエンコーダの探索や調整条件が性能比較を変えることを点検できるため。",
+      "reading_gate": {
+        "focus": "Presets、Tuning、Zero Latency",
+        "skip_if": "x265を利用せず、同等の実装文書が別にある",
+        "exit_check": "zerolatencyと高速presetが同義ではない理由を説明する",
+        "return_trigger": "論文の設定を実装で再現する"
+      },
+      "limitations": "可変なstable URLの取得時スナップショットであり版固定資料ではない。文書のzero latencyをネットワークを含む全系の遅延ゼロという保証に読まない。",
+      "decision": "目的限定参照",
+      "comparison_with_existing": "P08/P10のpreset差を読む時に実装文書へ接続。速いpresetとzerolatencyを区別する。"
+    },
+    {
+      "id": "IC07",
+      "title": "The Bjøntegaard Bible: Why your Way of Comparing Video Codecs May Be Wrong",
+      "bibliography": "Christian Herglotz et al., arXiv:2304.12852v2, 22 December 2023",
+      "bibliographic_url": "https://arxiv.org/html/2304.12852v2",
+      "discovery": {
+        "search_id": "D4",
+        "route": "客観/主観評価とBD-rateの落とし穴の問題検索で発見"
+      },
+      "verification_route": "arXiv HTMLの版表示、著者表示、要旨、VI Recommendations、VII Conclusionを確認。",
+      "checked_scope": "上記選択本文を確認。全表・全データセット・補間コードの実行は未確認。確認版はv2であり最終雑誌版と同一とは主張しない。",
+      "reading_role": "圧縮性能の単一数値を読む前に、補間・比較区間・品質尺度・誤差の条件を監査する。",
+      "important_concepts": [
+        "Bjøntegaard Delta",
+        "Akima/PCHIP補間",
+        "supporting points",
+        "比較範囲の重なり",
+        "飽和する品質指標",
+        "relative curve difference",
+        "subset error"
+      ],
+      "selection_reason": "改善率だけを抜き出す選定に対し、数値が比較条件に耐えるかを問う評価軸を入れるため。",
+      "reading_gate": {
+        "focus": "VI Recommendationsと、それが参照する数式・評価条件",
+        "skip_if": "RD曲線の集約比較を一切行わない",
+        "exit_check": "補間法・評価範囲・測定点・指標を報告に明記する",
+        "return_trigger": "微小BD差や異種指標で優劣を主張する"
+      },
+      "limitations": "論文名のBibleは必読合意を意味しない。論文の推奨や誤差量を全データセットに普遍化しない。",
+      "decision": "維持",
+      "comparison_with_existing": "既存P13と同一論文。BD比較の時だけ戻る方針を維持。今回の候補生成は問題検索由来。"
+    },
+    {
+      "id": "IC08",
+      "title": "Remote expert viewing, laboratory tests or objective metrics: which one(s) to trust?",
+      "bibliography": "M. Wien and J. Jung, EURASIP Journal on Image and Video Processing, 2024, article 16, version of record 17 June 2024, DOI: 10.1186/s13640-024-00630-7",
+      "bibliographic_url": "https://link.springer.com/article/10.1186/s13640-024-00630-7",
+      "discovery": {
+        "search_id": "D4",
+        "route": "主観/客観評価を問う問題検索で発見"
+      },
+      "verification_route": "出版社の書誌・版日・要旨、3.4 Discussion、4 REV CMOS vs. Laboratory DMOSと結果の一部を確認。",
+      "checked_scope": "上記選択本文と書誌のみ。全プロトコル・統計計算・全実験を独立再検証したものではない。図は視覚確認していない。",
+      "reading_role": "平均指標での全体順位、同一映像内の方式差、専門家と一般視聴者の判定を区別する。",
+      "important_concepts": [
+        "remote expert viewing",
+        "laboratory subjective tests",
+        "CMOS/DMOS",
+        "信頼区間",
+        "同一コンテンツの対比較",
+        "客観指標と主観判定の不一致"
+      ],
+      "selection_reason": "PSNRやVMAFをそのまま知覚品質の真値と見なす偏りを点検し、評価設計そのものを読む候補を確保するため。",
+      "reading_gate": {
+        "focus": "同一コンテンツ対比較と全体順位の違い、信頼区間付き判定",
+        "skip_if": "画質評価を行わず規範実装だけを扱う",
+        "exit_check": "評価対象・視聴者・尺度・不確実性を分けて記述する",
+        "return_trigger": "指標間の矛盾やインループ処理の知覚効果を判断する"
+      },
+      "limitations": "検証対象とプロトコルに依存する研究であり最良指標の普遍ランキングではない。要旨が明記するとおりBD-rateの複数レート集約自体は対象外。",
+      "decision": "目的限定参照",
+      "comparison_with_existing": "P15の理論とは違う、動画の対比較・視聴者・信頼区間を扱う実証研究。知覚品質経路の評価側を補う。"
+    }
+  ],
+  "remaining_biases_and_gaps": [
+    "HEVC・H.264系と英語公開情報に寄っている。AV1/VVCの道具比較やニューラル符号化は選外であり、不要と判断した意味ではない。",
+    "エントロピー符号化・変換の基礎を独立した専門論文で深掘りしていない。書籍目次と基礎教材に依存する。",
+    "低遅延と探索複雑度は入れたが、レート制御の専用サーベイ、エネルギー・メモリ帯域、誤り耐性、ランダムアクセス、色/HDRの体系的調査は不足している。",
+    "8件の制限内で入口の違いを優先した。独立候補生成段階では候補間の優先順位や既存集合との差分を判定していない。生成後の親側照合・採否は各項目に記載。"
+  ],
+  "checked_on": "2026-09-24",
+  "queries": [
+    {
+      "id": "D1",
+      "phase": "discovery_problem_based",
+      "query": "video coding hybrid prediction transform quantization rate distortion optimization tutorial"
+    },
+    {
+      "id": "D2",
+      "phase": "discovery_problem_based",
+      "query": "video coding standard decoder specification encoder design HEVC overview"
+    },
+    {
+      "id": "D3",
+      "phase": "discovery_problem_based",
+      "query": "video encoder low delay real time complexity rate control buffer constraints survey"
+    },
+    {
+      "id": "D4",
+      "phase": "discovery_problem_based",
+      "query": "video compression evaluation subjective objective quality BD rate pitfalls recommendation"
+    },
+    {
+      "id": "D5",
+      "phase": "discovery_problem_based",
+      "query": "x265 documentation low latency threading lookahead VBV presets"
+    },
+    {
+      "id": "D6",
+      "phase": "discovery_problem_based",
+      "query": "site.itu.int H.265 high efficiency video coding recommendation"
+    },
+    {
+      "id": "V1",
+      "phase": "citation_verification",
+      "query": "\"Compression Efficiency and Delay Tradeoffs\""
+    },
+    {
+      "id": "V2",
+      "phase": "citation_verification",
+      "query": "\"Rate-Distortion Optimization for Video Compression\" Sullivan Wiegand 1998"
+    }
+  ]
+}

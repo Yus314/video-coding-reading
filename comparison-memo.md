@@ -19,7 +19,7 @@ P08 §4.2はH.264/H.265をFFmpegの `very fast` modeで生成、GOPはUVG=12、H
 - Table 3のA100ではfp16が125.2/112.8 fps、int16が28.3/20.9 fps（符号化/復号）。
 - Table 3の平均BD-rateはfp16=-21.0%、int16=-18.3%（VTM基準）。fp16値はYUV420のTable 2と一致する。ここではTable 3の報告値として記録し、RGBへ同じ数値を適用しない。異なる精度の速度とBD値を混ぜない。
 
-この値は著者の条件での報告であり、製品のend-to-end遅延、他のGPU、周期的なランダムアクセスへ一般化しない。補足のコマンド、色変換、集約実装、時間測定の境界は未監査。
+この値は著者の条件での報告であり、製品のend-to-end遅延、他のGPU、周期的なランダムアクセスへ一般化しない。補足§2.3とcommit固定の公開実装については[速度測定境界を監査した](evidence-audit.md)。確認した実装はentropy codingを含む一方、入力/出力I/O・画質計算・先頭10フレームを速度平均から除く。論文実験snapshotとの同一性、速度の集約重み・raw logs、BD集約と数値再現は未確認。
 
 根拠：[DCVC-RT本文](https://openaccess.thecvf.com/content/CVPR2025/papers/Jia_Towards_Practical_Real-Time_Neural_Video_Compression_CVPR_2025_paper.pdf) §5.1、Tables 2–3。
 

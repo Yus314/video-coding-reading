@@ -2,7 +2,7 @@
 
 # 注釈付き文献一覧
 
-リリース：reading-decisions-3
+リリース：independent-evidence-4
 
 範囲：登録候補20論文＋補助資料3件。目的限定の追加参照はscreening.jsonとfollowup-review.mdに分離。必読順位・網羅調査ではない。
 
@@ -293,8 +293,8 @@
 - 他の候補との差：P10系統の後続を、単なるRD改善でなく実用性の観点で選定する。
 - 推奨学習順（必須依存ではない）：[P10](<papers/P10.md>)
 - 必要な背景知識：特徴contextを使う基本構造を説明できる, 処理速度の測定範囲とend-to-end遅延を区別する必要を理解する
-- 限界・注意：A100・fp16の値を全GPUやint16に流用しない。コードの実行再現は未実施。
-- 根拠の確認範囲：本文の構造・実験条件確認 — CVPR paper §5.1; Tables 2–3; Fig.5(c)
+- 限界・注意：A100・fp16の著者報告。確認した公開実装はI/O・画質計算・先頭10フレームを速度平均から除外。論文実験snapshotとの同一性と数値再現は未確認。evidence-audit.md参照。
+- 根拠の確認範囲：本文・補足の指定節と公開実装の静的確認（GPU再現なし） — CVPR paper §5.1; Tables 2–3; Fig.5(c); supplementary §2.3; public DCVC-RT test_video.py L173–333 (commit cbdae87a5445114cdc7f48816da63ea80bdeac40)
 - 根拠資料：[原文](<https://openaccess.thecvf.com/content/CVPR2025/papers/Jia_Towards_Practical_Real-Time_Neural_Video_Compression_CVPR_2025_paper.pdf>)
 - 読書状態：候補・利用者未読状態は未確認
 - 選定判断：維持（目的別の読む役割を限定）
