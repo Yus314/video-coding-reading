@@ -1,0 +1,59 @@
+{
+  "scope": "今回実際に内容または要旨を確認して採否判断した候補。全検索結果の網羅的除外ログではない。",
+  "decisions": [
+    {
+      "candidate": "Learned Video Compression",
+      "identifier": "https://openaccess.thecvf.com/content_ICCV_2019/html/Rippel_Learned_Video_Compression_ICCV_2019_paper.html",
+      "decision": "採用: P18",
+      "discovered_by": "タイトル検索後、S03 §3.7/参考文献[153]とP10参考文献[16]で位置付けを確認",
+      "reason": "学習状態・共同表現・空間レート制御という別設計を追加。DVC/DCVCのどちらも不要にはしない。",
+      "source_url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Rippel_Learned_Video_Compression_ICCV_2019_paper.pdf",
+      "locator": "§2.1; §4"
+    },
+    {
+      "candidate": "λ Domain Rate Control Algorithm for High Efficiency Video Coding",
+      "identifier": "10.1109/TIP.2014.2336550",
+      "decision": "仮採用: P19（本文監査待ち）",
+      "discovered_by": "レート制御の概念別検索、Europe PMC書誌/著者要旨",
+      "reason": "従来型rate controlの入口。現時点の本文未取得を低品質の根拠にしないが、詳細比較の根拠にも使わない。",
+      "source_url": "https://europepmc.org/article/MED/25020096",
+      "locator": "Abstract"
+    },
+    {
+      "candidate": "Emerging Advances in Learned Video Compression: Models, Systems and Beyond",
+      "identifier": "10.24963/ijcai.2025/1165",
+      "decision": "採用: P20",
+      "discovered_by": "別著者の新しいサーベイ検索",
+      "reason": "単方向/双方向、最適化、システムを横断。P17のdeep tools分類は残す。",
+      "source_url": "https://www.ijcai.org/proceedings/2025/1165.pdf",
+      "locator": "§2–5"
+    },
+    {
+      "candidate": "An Introduction to Neural Data Compression",
+      "identifier": "10.1561/0600000107",
+      "decision": "補助教材: S03",
+      "discovered_by": "機械学習・情報理論側の入門サーベイ検索",
+      "reason": "前提を補う教材と別系統発見の入口。長いモノグラフ全体を共通必読にしない。",
+      "source_url": "https://arxiv.org/pdf/2202.06533v3.pdf",
+      "locator": "Contents; §3.7; References [153]"
+    },
+    {
+      "candidate": "MobileNVC: Real-time 1080p Neural Video Compression on a Mobile Device",
+      "identifier": "arXiv:2310.01258",
+      "decision": "保留（実用・モバイル経路を深める時に本文監査）",
+      "discovered_by": "P20 §4.2から後方探索→arXiv v3要旨",
+      "reason": "P12のGPU実験とは違うmobile pipeline/整数化が価値。現時点で端末・測定範囲の本文監査未実施なので新しい必読キューへは入れない。",
+      "source_url": "https://arxiv.org/abs/2310.01258v3",
+      "locator": "Abstract; Comments: matches WACV 2024"
+    },
+    {
+      "candidate": "Neural Rate Control for Learned Video Compression",
+      "identifier": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8c1d92835eb4e601f396c97ec60439fe-Abstract-Conference.html",
+      "decision": "保留（学習型rate controlを重点化した時に本文監査）",
+      "discovered_by": "P20 §3.4/References Zhang et al.2024b→ICLR要旨",
+      "reason": "rate allocationとrate implementationの分離がP19との比較候補。要旨のみで従来型を置き換えたり性能順位にしない。",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8c1d92835eb4e601f396c97ec60439fe-Abstract-Conference.html",
+      "locator": "Abstract"
+    }
+  ]
+}

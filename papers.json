@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
-  "release": "initial-1-public",
-  "scope": "従来型・学習型・評価の初期学習地図。最新網羅調査や性能ランキングではない。",
+  "schema_version": 2,
+  "release": "selection-and-maintenance-2",
+  "scope": "目的別の文献地図。20論文＋3補助資料。体系的探索の一巡であり、最新網羅や普遍的な必読順位ではない。",
   "papers": [
     {
       "id": "P01",
@@ -24,9 +24,32 @@
       "status": "候補・利用者未読状態は未確認",
       "selected_by": "assistant",
       "code_reproduced": false,
-      "checked_on": "2026-09-23",
+      "checked_on": "2026-09-24",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
-      "queue": "共通導入"
+      "queue": "共通導入",
+      "evidence_claims": [
+        {
+          "claim": "規格はビットストリームの構文・制約と復号過程を規定し、符号化側の最適化には自由度を残す。",
+          "url": "https://www.cs.ubc.ca/~krasic/cpsc538a/papers/h264avc-overview.pdf",
+          "locator": "Introduction; Fig.1",
+          "depth": "指定本文箇所確認"
+        },
+        {
+          "claim": "符号化層VCLとネットワーク抽象化層NALを分けて説明する。両者を圧縮アルゴリズムと転送形式の同一問題として扱わない。",
+          "url": "https://www.cs.ubc.ca/~krasic/cpsc538a/papers/h264avc-overview.pdf",
+          "locator": "§II–III",
+          "depth": "指定本文箇所確認"
+        }
+      ],
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "ハイブリッド符号化の各部品と、規格が決める範囲を理解する。",
+        "alternative": "P03より古く簡潔な設計を足場にできる。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P02",
@@ -53,7 +76,16 @@
       "code_reproduced": false,
       "checked_on": "2026-09-23",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
-      "queue": "分岐候補"
+      "queue": "目的別経路",
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "AVCからVVCへ移る際の中間世代を把握する。",
+        "alternative": "P01/P03間の系譜を埋め、HEVC比較論文の用語を理解できる。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P03",
@@ -80,7 +112,16 @@
       "code_reproduced": false,
       "checked_on": "2026-09-23",
       "discovery_route": "前回答の多様な種",
-      "queue": "分岐候補"
+      "queue": "目的別経路",
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "現代的ハイブリッド方式の機能と用途を俯瞰する。",
+        "alternative": "P04と対にし、単一の標準化系統に偏らない地図を作れる。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P04",
@@ -107,7 +148,16 @@
       "code_reproduced": false,
       "checked_on": "2026-09-23",
       "discovery_route": "前回答の多様な種",
-      "queue": "分岐候補"
+      "queue": "目的別経路",
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "別の標準化系統とハードウェア実現性の視点を導入する。",
+        "alternative": "P03の単なる代替でなく、設計対比の相手。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P05",
@@ -134,7 +184,16 @@
       "code_reproduced": false,
       "checked_on": "2026-09-23",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
-      "queue": "分岐候補"
+      "queue": "目的別経路",
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "確率モデル・二値化・算術符号化の役割を分離して理解する。",
+        "alternative": "概説だけでは見えにくいエントロピー符号化を掘り下げる。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P06",
@@ -159,9 +218,32 @@
       "status": "候補・利用者未読状態は未確認",
       "selected_by": "assistant",
       "code_reproduced": false,
-      "checked_on": "2026-09-23",
+      "checked_on": "2026-09-24",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
-      "queue": "共通導入"
+      "queue": "共通導入",
+      "evidence_claims": [
+        {
+          "claim": "動き表現と残差符号化の選択は相互作用する。予測誤差だけでなく、モードや動きに費やすビットも含めて最適化する。",
+          "url": "https://web.stanford.edu/class/ee398a/handouts/papers/Sullivan%20-%20RD%20Opt%20for%20Video.pdf",
+          "locator": "Video Compression Basics; Variable Block Sizes",
+          "depth": "指定本文箇所確認"
+        },
+        {
+          "claim": "ブロックサイズの例では小さいブロックの細かな予測と、動き表現の符号量の交換条件を示す。大きな自由度が常に無償の改善になるわけではない。",
+          "url": "https://web.stanford.edu/class/ee398a/handouts/papers/Sullivan%20-%20RD%20Opt%20for%20Video.pdf",
+          "locator": "Variable Block Sizes; Fig.3–4",
+          "depth": "指定本文箇所確認"
+        }
+      ],
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "圧縮率と誤差の交換条件を符号化意思決定として理解する。",
+        "alternative": "P05の確率モデルとは別に、モードやビット配分を選ぶ原理を補う。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P07",
@@ -180,15 +262,46 @@
       "reading_question": "副情報を送るコストを払っても、なぜ全体の符号量を減らせるのか。",
       "marginal_value": "P08/P10に入る前の画像符号化・確率モデルの橋渡し。",
       "limitations": "画像圧縮の論文。時間方向の予測や長系列安定性を解いたとは扱わない。",
-      "evidence_depth": "要旨・書誌確認",
-      "evidence_url": "https://research.google/pubs/variational-image-compression-with-a-scale-hyperprior/",
-      "evidence_locator": "Google Research abstract / ICLR metadata",
+      "evidence_depth": "本文の構造・符号化順序・評価上の注意を確認",
+      "evidence_url": "https://arxiv.org/html/1802.01436v2",
+      "evidence_locator": "arXiv v2 §2–3; Fig.2–4; §4.2 Fig.5/7; §5",
       "status": "候補・利用者未読状態は未確認",
       "selected_by": "assistant",
       "code_reproduced": false,
-      "checked_on": "2026-09-23",
+      "checked_on": "2026-09-24",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
-      "queue": "共通導入"
+      "queue": "目的別経路",
+      "evidence_claims": [
+        {
+          "claim": "量子化したhyperlatent zを副情報として先に復号し、予測した尺度を使って画像latent yの確率を得て復号する。副情報の費用も損失に含む。",
+          "url": "https://arxiv.org/html/1802.01436v2",
+          "locator": "§3; Eq.10; Fig.3–4",
+          "depth": "指定本文箇所確認"
+        },
+        {
+          "claim": "factorized priorに残る依存を尺度で説明する設計であり、画像latentの全依存を完全に消したとの保証ではない。",
+          "url": "https://arxiv.org/html/1802.01436v2",
+          "locator": "§2 Fig.2; §3; §5",
+          "depth": "指定本文箇所確認"
+        },
+        {
+          "claim": "Fig.5のPSNR曲線は等lambda、MS-SSIM曲線は補間した等rateで集約する。学習損失と評価指標・集約条件を分けて読む。",
+          "url": "https://arxiv.org/html/1802.01436v2",
+          "locator": "§4.2; Fig.5 caption",
+          "depth": "指定本文箇所確認"
+        }
+      ],
+      "required_background": [
+        "基本的な確率・信号処理の用語",
+        "ニューラルネットワークの基礎",
+        "量子化と確率モデルの区別"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "学習型映像符号化の前提となる潜在表現と副情報を理解する。",
+        "alternative": "P08/P10に入る前の画像符号化・確率モデルの橋渡し。",
+        "confidence": "符号化順序と費用を本文で確認し、概念教材としての根拠を補強。影響度の定量評価は未実施。"
+      }
     },
     {
       "id": "P08",
@@ -215,9 +328,34 @@
       "status": "候補・利用者未読状態は未確認",
       "selected_by": "assistant",
       "code_reproduced": false,
-      "checked_on": "2026-09-23",
+      "checked_on": "2026-09-24",
       "discovery_route": "前回答の多様な種",
-      "queue": "共通導入"
+      "queue": "目的別経路",
+      "evidence_claims": [
+        {
+          "claim": "動き推定・補償と、動き／残差の表現を用いる構造を共同のRD損失で学習する。従来型との部品対応を示す。",
+          "url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_DVC_An_End-To-End_Deep_Video_Compression_Framework_CVPR_2019_paper.pdf",
+          "locator": "§3.2; Fig.2; §3.6",
+          "depth": "指定本文箇所確認"
+        },
+        {
+          "claim": "本文の従来型比較はFFmpeg very fast mode、GOPはUVG=12、HEVC=10。普遍的な規格間性能差ではない。",
+          "url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_DVC_An_End-To-End_Deep_Video_Compression_Framework_CVPR_2019_paper.pdf",
+          "locator": "§4.1–4.2",
+          "depth": "指定本文箇所確認"
+        }
+      ],
+      "required_background": [
+        "基本的な確率・信号処理の用語",
+        "ニューラルネットワークの基礎",
+        "量子化と確率モデルの区別"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "動き・残差を学習器で符号化する構造を従来型と対応させる。",
+        "alternative": "P10との対比に必要な残差符号化側の足場。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P09",
@@ -244,7 +382,16 @@
       "code_reproduced": false,
       "checked_on": "2026-09-23",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
-      "queue": "分岐候補"
+      "queue": "目的別経路",
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "動き予測の不確実性と学習手順の単純化を見る。",
+        "alternative": "残差→条件付けだけでない設計軸をP08に追加する。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P10",
@@ -270,9 +417,40 @@
       "status": "候補・利用者未読状態は未確認",
       "selected_by": "assistant",
       "code_reproduced": false,
-      "checked_on": "2026-09-23",
+      "checked_on": "2026-09-24",
       "discovery_route": "前回答の多様な種",
-      "queue": "共通導入"
+      "queue": "目的別経路",
+      "evidence_claims": [
+        {
+          "claim": "特徴空間のcontextをencoder、decoder、entropy modelに与える。単に残差画像を別名で送る設計ではない。",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf",
+          "locator": "§3.1–3.3; Fig.1–2",
+          "depth": "指定本文箇所確認"
+        },
+        {
+          "claim": "context learningは再構成参照と符号化された動きを使う。受信側が原フレームを無料で参照するわけではない。",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf",
+          "locator": "§3.3",
+          "depth": "指定本文箇所確認"
+        },
+        {
+          "claim": "DVC/DVCProを同じintra codecで再評価し、x264/x265はveryslowとconstant QPで比較する。DVC原著値と混ぜない。",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf",
+          "locator": "§4.1–4.2",
+          "depth": "指定本文箇所確認"
+        }
+      ],
+      "required_background": [
+        "基本的な確率・信号処理の用語",
+        "ニューラルネットワークの基礎",
+        "量子化と確率モデルの区別"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "残差との対比に有用。ただし学習型の発展をDVC→DCVCという唯一の系譜で説明しない。P18を別系統として併読。",
+        "alternative": "P08からの概念差を学ぶ。小さな性能差だけを選定理由にしない。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P11",
@@ -300,7 +478,18 @@
       "code_reproduced": false,
       "checked_on": "2026-09-23",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
-      "queue": "分岐候補"
+      "queue": "目的別経路",
+      "required_background": [
+        "基本的な確率・信号処理の用語",
+        "ニューラルネットワークの基礎",
+        "量子化と確率モデルの区別"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "動画をモデル重みとして表す別の符号化観を導入する。",
+        "alternative": "汎用モデルによる逐次符号化のP08/P10とは違う枝。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P12",
@@ -329,7 +518,18 @@
       "code_reproduced": false,
       "checked_on": "2026-09-23",
       "discovery_route": "前回答の多様な種",
-      "queue": "分岐候補"
+      "queue": "目的別経路",
+      "required_background": [
+        "基本的な確率・信号処理の用語",
+        "ニューラルネットワークの基礎",
+        "量子化と確率モデルの区別"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "圧縮率以外の実装コストとデバイス間整合性を読む。",
+        "alternative": "P10系統の後続を、単なるRD改善でなく実用性の観点で選定する。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P13",
@@ -354,9 +554,26 @@
       "status": "候補・利用者未読状態は未確認",
       "selected_by": "assistant",
       "code_reproduced": false,
-      "checked_on": "2026-09-23",
+      "checked_on": "2026-09-24",
       "discovery_route": "前回答の多様な種",
-      "queue": "共通導入"
+      "queue": "評価時に参照",
+      "evidence_claims": [
+        {
+          "claim": "BD計算の補間誤差を検討し、相対曲線差の確認や差の大きさに応じた慎重な解釈を推奨する。",
+          "url": "https://arxiv.org/html/2304.12852",
+          "locator": "Abstract; Introduction",
+          "depth": "要旨・導入確認"
+        }
+      ],
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "BD値を読む際の補間・区間・測定誤差を学ぶ。",
+        "alternative": "手法提案のP08/P10/P12とは役割が異なり、比較の誤読を抑える。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P14",
@@ -381,9 +598,26 @@
       "status": "候補・利用者未読状態は未確認",
       "selected_by": "assistant",
       "code_reproduced": false,
-      "checked_on": "2026-09-23",
+      "checked_on": "2026-09-24",
       "discovery_route": "前回答の多様な種",
-      "queue": "共通導入"
+      "queue": "評価時に参照",
+      "evidence_claims": [
+        {
+          "claim": "平均RD曲線から計算したBDとシーケンス別BDの平均が異なる結論を与え得ることを、解析と動画codec比較の例で示す。全データ集合で必ず逆転するという主張ではない。",
+          "url": "https://arxiv.org/html/2409.08772",
+          "locator": "Abstract; §1–2",
+          "depth": "要旨・導入確認"
+        }
+      ],
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "データ集合の集約順序による結論の変化を理解する。",
+        "alternative": "P13の補間問題とは異なる集約の問題を補う。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P15",
@@ -410,7 +644,16 @@
       "code_reproduced": false,
       "checked_on": "2026-09-23",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
-      "queue": "分岐候補"
+      "queue": "目的別経路",
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "低歪みと知覚的自然さを別の目標として理解する。",
+        "alternative": "PSNR中心の比較に対し、目的そのものを問い直す。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P16",
@@ -437,7 +680,16 @@
       "code_reproduced": false,
       "checked_on": "2026-09-23",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
-      "queue": "分岐候補"
+      "queue": "目的別経路",
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "低遅延だけに偏らず、階層的双方向予測を扱う。",
+        "alternative": "P09/P10の逐次的条件と異なる時間構造を補う。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
     },
     {
       "id": "P17",
@@ -464,7 +716,171 @@
       "code_reproduced": false,
       "checked_on": "2026-09-23",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
-      "queue": "分岐候補"
+      "queue": "目的別経路",
+      "required_background": [
+        "基本的な確率・信号処理の用語"
+      ],
+      "selection": {
+        "decision": "維持（目的別の読む役割を限定）",
+        "importance": "学習型の新方式と、既存方式への学習ツール組込みを分ける。",
+        "alternative": "エンドツーエンド論文だけに偏る候補集合を補正する。",
+        "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
+      }
+    },
+    {
+      "id": "P18",
+      "title": "Learned Video Compression",
+      "authors_display": "Oren Rippel; Sanjay Nair; Carissa Lew; Steve Branson; Alexander G. Anderson; Lubomir Bourdev",
+      "year": 2019,
+      "venue_version": "ICCV 2019",
+      "identifier": "https://openaccess.thecvf.com/content_ICCV_2019/html/Rippel_Learned_Video_Compression_ICCV_2019_paper.html",
+      "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Rippel_Learned_Video_Compression_ICCV_2019_paper.html",
+      "branch": "学習型",
+      "role": "別設計",
+      "prerequisites": [
+        "P08"
+      ],
+      "reason_to_read": "学習した状態の伝播、動きと残差の共同表現、空間レート制御を別系統として読む。",
+      "reading_question": "再構成フレームだけでなく状態を引き継ぐことで、何を表現でき、何を送る必要があるか。",
+      "marginal_value": "DVC→DCVCだけの系譜を補正する。性能順位ではなく状態・制御という設計軸を追加。",
+      "limitations": "当時のlow-latency条件の主張。全実験設定・現在の実装比較・再現は未確認。",
+      "evidence_depth": "本文の構造とレート制御節確認",
+      "evidence_url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Rippel_Learned_Video_Compression_ICCV_2019_paper.pdf",
+      "evidence_locator": "§2.1; §3; §4.1–4.2",
+      "status": "候補・利用者の既読状態は未確認",
+      "selected_by": "assistant",
+      "code_reproduced": false,
+      "checked_on": "2026-09-24",
+      "discovery_route": "S03 §3.7で別系統として検討し、参考文献[153]を確認。初回発見はタイトル検索。",
+      "queue": "目的別経路",
+      "required_background": [
+        "P01で扱う基本構造",
+        "レート歪みの概念"
+      ],
+      "selection": {
+        "decision": "追加（共通導入には追加しない）",
+        "importance": "学習した状態の伝播、動きと残差の共同表現、空間レート制御を別系統として読む。",
+        "alternative": "DVC→DCVCだけの系譜を補正する。性能順位ではなく状態・制御という設計軸を追加。",
+        "confidence": "§2.1/§4を確認し、別設計の教材として選定。全比較実験は未監査。"
+      },
+      "evidence_claims": [
+        {
+          "claim": "一般化した学習状態を引き継ぎ、低帯域のbottleneckを通じて更新する。state-to-frameから再構成する。",
+          "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Rippel_Learned_Video_Compression_ICCV_2019_paper.pdf",
+          "locator": "§2.1; Fig.5",
+          "depth": "指定本文箇所確認"
+        },
+        {
+          "claim": "空間的な可変rateを扱う機構と、RD曲線の傾きを用いるrate controllerを分けて記述する。",
+          "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Rippel_Learned_Video_Compression_ICCV_2019_paper.pdf",
+          "locator": "§4.1–4.2",
+          "depth": "指定本文箇所確認"
+        }
+      ]
+    },
+    {
+      "id": "P19",
+      "title": "λ Domain Rate Control Algorithm for High Efficiency Video Coding",
+      "authors_display": "Bin Li; Houqiang Li; Li Li; Jinlei Zhang",
+      "year": 2014,
+      "venue_version": "IEEE TIP 23(9), 3841–3854",
+      "identifier": "10.1109/TIP.2014.2336550",
+      "url": "https://doi.org/10.1109/TIP.2014.2336550",
+      "branch": "従来型",
+      "role": "レート制御",
+      "prerequisites": [
+        "P02",
+        "P06"
+      ],
+      "reason_to_read": "モード選択のRDOと、目標ビットレートに合わせる制御を区別する入口。",
+      "reading_question": "R-QモデルではなくR-lambdaモデルを用いる狙いは何か。",
+      "marginal_value": "従来型レート制御という未収集の枝を補う。ニューラル方式への置換ではない。",
+      "limitations": "出版社の本文取得に失敗。索引に収録された著者要旨のみ確認し、採用経緯・実装・数値は独立検証していない。",
+      "evidence_depth": "索引書誌・著者要旨確認",
+      "evidence_url": "https://europepmc.org/article/MED/25020096",
+      "evidence_locator": "Europe PMC MED:25020096 abstract / DOI metadata",
+      "status": "候補・利用者の既読状態は未確認",
+      "selected_by": "assistant",
+      "code_reproduced": false,
+      "checked_on": "2026-09-24",
+      "discovery_route": "レート制御の概念別検索→DOI取得失敗→Europe PMC APIの書誌・要旨に切替。",
+      "queue": "目的別経路",
+      "required_background": [
+        "P01で扱う基本構造",
+        "レート歪みの概念"
+      ],
+      "selection": {
+        "decision": "追加（共通導入には追加しない）",
+        "importance": "モード選択のRDOと、目標ビットレートに合わせる制御を区別する入口。",
+        "alternative": "従来型レート制御という未収集の枝を補う。ニューラル方式への置換ではない。",
+        "confidence": "本文未取得。索引書誌・著者要旨に基づく仮候補。"
+      },
+      "evidence_claims": [
+        {
+          "claim": "著者要旨はRとlambdaの対応を使った制御、階層的bit allocation、HEVC参照ソフトへの統合を報告する。実装採用は著者報告として保持。",
+          "url": "https://europepmc.org/article/MED/25020096",
+          "locator": "Abstract",
+          "depth": "索引収録の著者要旨確認"
+        }
+      ]
+    },
+    {
+      "id": "P20",
+      "title": "Emerging Advances in Learned Video Compression: Models, Systems and Beyond",
+      "authors_display": "Chuanmin Jia; Feng Ye; Siwei Ma; Wen Gao; Huifang Sun; Leonardo Chiariglione",
+      "year": 2025,
+      "venue_version": "IJCAI 2025 Survey Track, 10490–10498",
+      "identifier": "10.24963/ijcai.2025/1165",
+      "url": "https://doi.org/10.24963/ijcai.2025/1165",
+      "branch": "学習型",
+      "role": "全体像",
+      "prerequisites": [
+        "P01"
+      ],
+      "reason_to_read": "単方向/双方向、最適化、システム設計の分類から初期集合の抜けを探す。",
+      "reading_question": "方式・時間条件・レート制御・ハードウェアを分離すると、どの研究枝が抜けているか。",
+      "marginal_value": "P17の2019版とは対象年代・範囲が違う。P17のhybrid tools分類を捨てずに地図を更新。",
+      "limitations": "サーベイ著者も関連研究に参加。別著者の視点ではあるが完全に中立な第三者ベンチマークとは扱わない。2026年網羅ではない。",
+      "evidence_depth": "本文の分類・システム・実験条件節確認",
+      "evidence_url": "https://www.ijcai.org/proceedings/2025/1165.pdf",
+      "evidence_locator": "§2–5; Table 1/3",
+      "status": "候補・利用者の既読状態は未確認",
+      "selected_by": "assistant",
+      "code_reproduced": false,
+      "checked_on": "2026-09-24",
+      "discovery_route": "別著者・別年のサーベイを探すキーワード検索→IJCAI公式PDF。",
+      "queue": "目的別経路",
+      "required_background": [
+        "P01で扱う基本構造",
+        "レート歪みの概念"
+      ],
+      "selection": {
+        "decision": "追加（共通導入には追加しない）",
+        "importance": "単方向/双方向、最適化、システム設計の分類から初期集合の抜けを探す。",
+        "alternative": "P17の2019版とは対象年代・範囲が違う。P17のhybrid tools分類を捨てずに地図を更新。",
+        "confidence": "§2–5を確認し地図として選定。サーベイの網羅性・数値再現は未検証。"
+      },
+      "evidence_claims": [
+        {
+          "claim": "分類は単方向/双方向予測に加え、rate control、model quantization、edge/mobile deploymentを含む。",
+          "url": "https://www.ijcai.org/proceedings/2025/1165.pdf",
+          "locator": "§2–4",
+          "depth": "指定本文箇所確認"
+        },
+        {
+          "claim": "実験は先頭96フレーム、従来方式はRandom Access、LVCはintra-period/GOP=32。",
+          "url": "https://www.ijcai.org/proceedings/2025/1165.pdf",
+          "locator": "§5 Test Conditions",
+          "depth": "指定本文箇所確認"
+        },
+        {
+          "claim": "本文の一部手法のPSNR比較ではVTMとの差を報告し、low-latencyやGOPによる結果の変化も述べる。普遍的な学習型優位とは読まない。",
+          "url": "https://www.ijcai.org/proceedings/2025/1165.pdf",
+          "locator": "§5 Experimental Results",
+          "depth": "指定本文箇所確認"
+        }
+      ]
     }
-  ]
+  ],
+  "updated_on": "2026-09-24"
 }

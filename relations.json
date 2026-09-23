@@ -205,5 +205,50 @@
     "to": "P07",
     "type": "compare",
     "meaning": "確率モデルと副情報を考える学習上の対比（assistantの整理）"
+  },
+  {
+    "from": "P08",
+    "to": "P18",
+    "type": "recommended_before",
+    "meaning": "推奨する学習順。必須の論文依存や発明の系譜ではない。"
+  },
+  {
+    "from": "P02",
+    "to": "P19",
+    "type": "recommended_before",
+    "meaning": "推奨する学習順。必須の論文依存や発明の系譜ではない。"
+  },
+  {
+    "from": "P06",
+    "to": "P19",
+    "type": "recommended_before",
+    "meaning": "推奨する学習順。必須の論文依存や発明の系譜ではない。"
+  },
+  {
+    "from": "P01",
+    "to": "P20",
+    "type": "recommended_before",
+    "meaning": "推奨する学習順。必須の論文依存や発明の系譜ではない。"
+  },
+  {
+    "from": "P08",
+    "to": "P18",
+    "type": "compare",
+    "meaning": "残差・動きの構成と、学習状態・共同表現を対比する。"
+  },
+  {
+    "from": "P17",
+    "to": "P20",
+    "type": "compare",
+    "meaning": "既存codecへの学習ツール組込みと、新しいE2E・システム分類を補完する。"
+  },
+  {
+    "from": "P10",
+    "to": "P18",
+    "type": "cites",
+    "meaning": "DCVCの関連研究に収録。支持・直接継承の証明ではない。",
+    "evidence_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf",
+    "evidence_locator": "References [16]",
+    "quote": "O. Rippel, S. Nair, C. Lew, S. Branson, A. G. Anderson, and L. Bourdev, “Learned video compression,” in Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 3454–3463, 2019."
   }
 ]

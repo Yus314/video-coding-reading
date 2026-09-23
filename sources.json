@@ -64,5 +64,24 @@
   },
   "P17": {
     "url": "https://arxiv.org/abs/1904.12462"
+  },
+  "P18": {
+    "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Rippel_Learned_Video_Compression_ICCV_2019_paper.pdf"
+  },
+  "P19": {
+    "url": "https://europepmc.org/article/MED/25020096"
+  },
+  "P20": {
+    "url": "https://www.ijcai.org/proceedings/2025/1165.pdf"
+  },
+  "S03": {
+    "url": "https://arxiv.org/pdf/2202.06533v3.pdf",
+    "title": "An Introduction to Neural Data Compression",
+    "authors": "Yibo Yang; Stephan Mandt; Lucas Theis",
+    "year": 2023,
+    "identifier": "10.1561/0600000107",
+    "version": "arXiv:2202.06533v3",
+    "role": "補助教材・別系統の探索入口",
+    "evidence_depth": "目次・§3.7・参考文献[153]を中心に確認。全章精読ではない。"
   }
 }

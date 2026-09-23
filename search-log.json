@@ -19,5 +19,37 @@
     "2026年の網羅的最新調査",
     "コード実行・実験追試"
   ],
-  "boundary": "引用関係を確認しても、初回発見経路を引用探索に書き換えない。"
+  "boundary": "引用関係を確認しても、初回発見経路を引用探索に書き換えない。",
+  "rounds": [
+    {
+      "id": "selection-and-maintenance-2",
+      "objective": "DVC/DCVC中心の系譜と、共通導入の学習型偏重を反証側から見直す。",
+      "queries": [
+        "\"An Introduction to Neural Data Compression\" Yang Mandt Theis",
+        "\"Learned Video Compression\" Rippel 2019 ICCV",
+        "\"Rate Control for High Efficiency Video Coding\" \"R-lambda\"",
+        "\"learned video compression\" survey review 2024 2025",
+        "\"Domain Rate Control Algorithm\" \"2336550\" pdf",
+        "\"MobileNVC\" \"2024\" paper",
+        "\"Neural Rate Control for Learned Video Compression\" ICLR 2024"
+      ],
+      "discovery_and_followup": [
+        "S03 §3.7からRippel 2019の位置付けを確認（初回発見は検索）。",
+        "P20 §4.2→MobileNVC、§3.4→Neural Rate Controlの原文要旨を取得して保留判断。",
+        "P10参考文献[16]→P18を本文で照合。"
+      ],
+      "changed_decisions": [
+        "共通導入を短縮し学習型経路を分離",
+        "P18/P19/P20追加、S03補助化",
+        "P17はP20で置換せずhybrid toolsのため維持",
+        "P07を要旨から本文の符号化順序/集約条件まで補強"
+      ],
+      "retrieval_limitations": [
+        "P19 DOI本文取得失敗。PubMedのcookie画面を内容として採用せずEurope PMC APIの書誌・著者要旨へ切替。",
+        "PDFから抽出されたグラフの自動数値化は未検証なので採用しない。"
+      ],
+      "stopping_reason": "別のサーベイ視点と具体的追加/保留判断を得た一巡で停止。引用網全件・全会議走査の飽和を主張しない。",
+      "checked_on": "2026-09-24"
+    }
+  ]
 }

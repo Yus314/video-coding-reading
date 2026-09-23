@@ -70,11 +70,17 @@
     "temporal_structure": "未確認（未記載とは判定しない）",
     "test_data": "未確認（未記載とは判定しない）",
     "color_and_metric": "未確認（未記載とは判定しない）",
-    "bit_accounting": "未確認（未記載とは判定しない）",
+    "bit_accounting": "§3 Eq.10で画像latent yとhyperlatent z双方の費用を損失に含むことを確認。実bitstreamの計測範囲は別途未監査。",
     "hardware_and_precision": "未確認（未記載とは判定しない）",
-    "aggregation": "未確認（未記載とは判定しない）",
+    "aggregation": "Fig.5: PSNRは等lambda、MS-SSIMは補間した等rateで集約。",
     "unresolved": "未確認（未記載とは判定しない）",
-    "selection_caveat": "画像圧縮の論文。時間方向の予測や長系列安定性を解いたとは扱わない。"
+    "selection_caveat": "画像圧縮の論文。時間方向の予測や長系列安定性を解いたとは扱わない。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/1802.01436v2",
+        "locator": "§3 Eq.10; §4.2 Fig.5"
+      }
+    ]
   },
   "P08": {
     "baseline": "H.264/H.265をFFmpegのvery fast modeで生成。詳細オプションは補足資料参照と本文に記載。",
@@ -203,5 +209,44 @@
     "aggregation": "未確認（未記載とは判定しない）",
     "unresolved": "未確認（未記載とは判定しない）",
     "selection_caveat": "歴史的サーベイであり最新動向ではない。複数ツールを組み合わせた利得を一つの部品の効果にしない。"
+  },
+  "P18": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "low-latency方式。比較の全configは未監査。",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "当時のlow-latency条件の主張。全実験設定・現在の実装比較・再現は未確認。"
+  },
+  "P19": {
+    "baseline": "索引の著者要旨はHM-8.0のR-Qモデルとの比較を報告。本文・実装未監査。",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "出版社の本文取得に失敗。索引に収録された著者要旨のみ確認し、採用経緯・実装・数値は独立検証していない。"
+  },
+  "P20": {
+    "baseline": "HM-16.20 / VTM-23.0 Random Access。LVC: DCVC-DC, DCVC-FM, EEV-0.5。",
+    "temporal_structure": "先頭96フレーム。LVC intra-period=32、GOP=32。",
+    "test_data": "JCT-VC, UVG, MCL-JCV。",
+    "color_and_metric": "Table 3はPSNR(RGB)のBD-rate。本文ではRGB→YUV444で従来方式を符号化し、再構成をRGBへ戻して歪み評価すると記述。MS-SSIMも比較。数値の直接転記はしていない。",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "色変換の実装詳細、実装の全config、集約実装、実bit計測範囲を未監査。Random Accessの従来方式と一方向LVCを同じ遅延条件として扱わない。",
+    "selection_caveat": "サーベイ著者も関連研究に参加。別著者の視点ではあるが完全に中立な第三者ベンチマークとは扱わない。2026年網羅ではない。",
+    "evidence": [
+      {
+        "url": "https://www.ijcai.org/proceedings/2025/1165.pdf",
+        "locator": "§5; Table 3"
+      }
+    ]
   }
 }
