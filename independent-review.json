@@ -79,7 +79,8 @@
       },
       "limitations": "古い規格の例に基づく。Stanfordの公開授業コピーであり、著者版との同一性・再配布許諾は別途確認が必要。現代実装への数値の直接移植はしない。",
       "decision": "維持",
-      "comparison_with_existing": "既存P06と同一論文。意思決定原理の入口として維持し、重複登録しない。"
+      "comparison_with_existing": "既存P06と同一論文。意思決定原理の入口として維持し、重複登録しない。",
+      "canonical_paper_id": "P06"
     },
     {
       "id": "IC03",
@@ -234,7 +235,8 @@
       },
       "limitations": "論文名のBibleは必読合意を意味しない。論文の推奨や誤差量を全データセットに普遍化しない。",
       "decision": "維持",
-      "comparison_with_existing": "既存P13と同一論文。BD比較の時だけ戻る方針を維持。今回の候補生成は問題検索由来。"
+      "comparison_with_existing": "既存P13と同一論文。BD比較の時だけ戻る方針を維持。今回の候補生成は問題検索由来。",
+      "canonical_paper_id": "P13"
     },
     {
       "id": "IC08",

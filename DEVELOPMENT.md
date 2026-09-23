@@ -34,3 +34,7 @@ python3 scripts/catalog.py check --root /tmp/catalog-fixture
 `field-map.md`、`reading-queue.md`、`lineage.md`、`comparison-memo.md` は手動管理であり、生成処理は変更しない。私的な読書メモ、キャッシュ、全文、認証情報は生成ビューや正規メタデータに入れず、リポジトリ外で管理する。
 
 `prerequisites` と `recommended_before` は証明上の依存関係ではなく、推奨学習順である。既存の部分的な根拠確認を完全読了として記録せず、`status` と根拠の確認範囲をそのまま明示する。このツールは順位付けを行わない。
+
+## 読書案内の整合検査
+
+`tests/test_reading_integrity.py` は手編集を含むMarkdownの相対リンク先、P/ICの参照先、独立候補の既存論文への対応、図・監査記録の参照整合を確認する。リンクのfragment、外部URLの常時到達性、本文未読を読み終えたとする誤記、引用の意味、学習効果は保証しない。新たな書誌を増やす前に既存IDへの対応を確認し、重要な意味変更は原文で別途点検する。

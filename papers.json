@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "release": "independent-evidence-4",
-  "scope": "登録候補20論文＋補助資料3件。目的限定の追加参照はscreening.jsonとfollowup-review.mdに分離。必読順位・網羅調査ではない。",
+  "release": "question-transfer-5",
+  "scope": "登録候補20論文＋補助資料3件。目的限定参照・独立探索の対応と採否はscreening.json、followup-review.md、independent-review.json。全員向け必読順位・網羅調査ではない。",
   "papers": [
     {
       "id": "P01",
@@ -416,25 +416,40 @@
       "reason_to_read": "動き予測の不確実性と学習手順の単純化を見る。",
       "reading_question": "隠れていた領域の出現や速い動きを、通常のワーピングからどう改善するか。",
       "marginal_value": "残差→条件付けだけでない設計軸をP08に追加する。",
-      "limitations": "要旨は低遅延・Bフレームなしと記載。詳しい実験設定と性能は未監査。",
-      "evidence_depth": "要旨・書誌確認",
-      "evidence_url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.html",
-      "evidence_locator": "CVF abstract",
+      "limitations": "指定method節の構造確認。物理的bitstream配置・実ビット計測・全実験設定・性能再現は未監査。P09でのz_0はI画像latent。",
+      "evidence_depth": "会議版§3.1–3.4の指定本文確認（図画像・補足・実装は未確認）",
+      "evidence_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf",
+      "evidence_locator": "CVPR 2020 §3.1–3.4; Fig.2 caption（図画像は未確認）",
       "status": "候補・利用者未読状態は未確認",
       "selected_by": "assistant",
       "code_reproduced": false,
-      "checked_on": "2026-09-23",
+      "checked_on": "2026-09-24",
       "discovery_route": "概念別キーワード検索・会議/出版社ページ確認",
       "queue": "目的別経路",
       "required_background": [
-        "基本的な確率・信号処理の用語"
+        "再構成参照・動きlatent・残差latentを区別する",
+        "量子化と確率モデルと予測演算を区別する"
       ],
       "selection": {
         "decision": "維持（目的別の読む役割を限定）",
         "importance": "動き予測の不確実性と学習手順の単純化を見る。",
-        "alternative": "残差→条件付けだけでない設計軸をP08に追加する。",
+        "alternative": "P08後の任意分岐として予測演算の変更を読む。P10の必須前提にはしない。六問の適用例はreading-lab.md。",
         "confidence": "選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。"
-      }
+      },
+      "evidence_claims": [
+        {
+          "claim": "I画像・動き・残差の三種類のlatentに別のhyperpriorを使い、副情報の費用も損失へ含む。hyperprior内でautoregressive modelを使わないが、フレーム間の参照依存はある。",
+          "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf",
+          "locator": "§3.2–3.4",
+          "depth": "指定本文確認、実bitstream未監査"
+        },
+        {
+          "claim": "scale-space warpingは参照の位置とぼかし側のscaleを使う予測演算。latent量子化とは別。",
+          "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf",
+          "locator": "§3.1 Eq.(2)–(3), Reparameterization; §3.3",
+          "depth": "指定本文確認"
+        }
+      ]
     },
     {
       "id": "P10",
