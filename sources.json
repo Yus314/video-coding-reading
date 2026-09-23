@@ -1,0 +1,68 @@
+{
+  "P01": {
+    "url": "https://www.cs.ubc.ca/~krasic/cpsc538a/papers/h264avc-overview.pdf"
+  },
+  "P02": {
+    "url": "https://ieeexplore.ieee.org/document/6316136/"
+  },
+  "P03": {
+    "url": "https://www.microsoft.com/en-us/research/publication/overview-of-the-versatile-video-coding-vvc-standard-and-its-applications/"
+  },
+  "P04": {
+    "url": "https://arxiv.org/abs/2008.06091"
+  },
+  "P05": {
+    "url": "https://iphome.hhi.de/marpe/download/cabac_ieee03.pdf"
+  },
+  "P07": {
+    "url": "https://research.google/pubs/variational-image-compression-with-a-scale-hyperprior/"
+  },
+  "P08": {
+    "url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Lu_DVC_An_End-To-End_Deep_Video_Compression_Framework_CVPR_2019_paper.html"
+  },
+  "P09": {
+    "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.html"
+  },
+  "P10": {
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/96b250a90d3cf0868c83f8c965142d2a-Abstract.html"
+  },
+  "P11": {
+    "url": "https://neurips.cc/virtual/2021/poster/26386"
+  },
+  "P12": {
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Jia_Towards_Practical_Real-Time_Neural_Video_Compression_CVPR_2025_paper.html"
+  },
+  "P13": {
+    "url": "https://arxiv.org/html/2304.12852"
+  },
+  "P14": {
+    "url": "https://arxiv.org/html/2409.08772"
+  },
+  "P15": {
+    "url": "https://proceedings.mlr.press/v97/blau19a.html"
+  },
+  "S01": {
+    "url": "https://vvc.hhi.fraunhofer.de/"
+  },
+  "S02": {
+    "url": "https://www.wohlin.eu/ease14.pdf"
+  },
+  "P06": {
+    "url": "https://web.stanford.edu/class/ee398a/handouts/papers/Sullivan%20-%20RD%20Opt%20for%20Video.pdf"
+  },
+  "P08-full": {
+    "url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_DVC_An_End-To-End_Deep_Video_Compression_Framework_CVPR_2019_paper.pdf"
+  },
+  "P10-full": {
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf"
+  },
+  "P12-full": {
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Jia_Towards_Practical_Real-Time_Neural_Video_Compression_CVPR_2025_paper.pdf"
+  },
+  "P16": {
+    "url": "https://arxiv.org/abs/2112.09529"
+  },
+  "P17": {
+    "url": "https://arxiv.org/abs/1904.12462"
+  }
+}

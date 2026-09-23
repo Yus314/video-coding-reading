@@ -1,0 +1,207 @@
+{
+  "P01": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "古い規格の概説であり、現在の最良実装・速度を代表しない。"
+  },
+  "P02": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "今回は出版社の要旨・書誌を確認。個別ツールの詳細は本文未確認。"
+  },
+  "P03": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "要旨中の削減率を普遍的性能差にしない。VTMと実用実装を区別する。"
+  },
+  "P04": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "今回確認したのはarXiv v2の要旨。最新AV1実装の性能を示す資料ではない。"
+  },
+  "P05": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "二段組PDF抽出の列混在あり。数式・擬似コードは元PDFで再確認する。"
+  },
+  "P06": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "過去のコーデックでの実験を最新性能に外挿しない。量子化・確率・最適化の基礎は別途必要。"
+  },
+  "P07": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "画像圧縮の論文。時間方向の予測や長系列安定性を解いたとは扱わない。"
+  },
+  "P08": {
+    "baseline": "H.264/H.265をFFmpegのvery fast modeで生成。詳細オプションは補足資料参照と本文に記載。",
+    "temporal_structure": "GOP: UVG=12、HEVC=10。提案法は直前の再構成フレームを参照。",
+    "test_data": "UVG; HEVC Classes B,C,D,E。学習Vimeo-90k。",
+    "color_and_metric": "PSNR・MS-SSIM、Bpp。色変換と成分集約は未確認。",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "補足資料の実装版・コマンド、評価フレーム数、色空間、実ビット計測範囲、BD集約、時間計測範囲。",
+    "selection_caveat": "主結果は特定のFFmpeg設定。別実装・presetへの優位性に拡張しない。",
+    "evidence": [
+      {
+        "url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_DVC_An_End-To-End_Deep_Video_Compression_Framework_CVPR_2019_paper.pdf",
+        "locator": "§4.1–4.2"
+      }
+    ]
+  },
+  "P09": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "要旨は低遅延・Bフレームなしと記載。詳しい実験設定と性能は未監査。"
+  },
+  "P10": {
+    "baseline": "x264/x265 veryslow + constant QP。DVC/DVCProを同一intra codecで再評価。",
+    "temporal_structure": "GOP: HEVC=10、その他=12。",
+    "test_data": "HEVC B–E、UVG、MCL-JCV。学習Vimeo-90k septuplet training split。",
+    "color_and_metric": "MSE目標用とMS-SSIM目標用のモデル。色変換詳細は未確認。",
+    "bit_accounting": "学習のRはlatent cross-entropy。テストの実ビット計測範囲はこの確認では未確定。",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "コード・補足にある実装版、フレーム数、色変換、テストの実ビット範囲、BD集約、ハードウェアと実測範囲。",
+    "selection_caveat": "DVC原著と比較条件が異なる。著者らによる同条件での再評価と原著値を区別する。",
+    "evidence": [
+      {
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf",
+        "locator": "§3.4–4.2"
+      }
+    ]
+  },
+  "P11": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "学習・適合時間と重みの符号量を要確認。実時間ストリーミングと同じ条件ではない。"
+  },
+  "P12": {
+    "baseline": "本文Table 2ではHM-16.25 / VTM-17.0 / ECM-11.0。具体的コマンドは補足資料で要確認。",
+    "temporal_structure": "all frames、intra-period=-1、low delay。GOP=8は訓練の品質階層の記載と区別。",
+    "test_data": "HEVC B–E、UVG、MCL-JCV。学習Vimeo-90kと長系列fine-tuning。",
+    "color_and_metric": "YUV420とRGBを評価。以下の速度・BD値はTable 2/3の条件に限定。",
+    "bit_accounting": "著者はheadersを含むactual binary bit-streamsで再評価したと明記。独立追試なし。",
+    "hardware_and_precision": "デフォルトNVIDIA A100 + AMD EPYC 7V13、1920x1080。Table 3のA100 fp16=125.2/112.8 fps、int16=28.3/20.9 fps（符号化/復号）。",
+    "aggregation": "Table 2/3の平均値。BD平均の計算実装・重みは未確認。",
+    "unresolved": "補足のconfig、色変換・BD集約コード、全処理時間の測定境界、周期的ランダムアクセス条件での挙動。",
+    "selection_caveat": "A100・fp16の値を全GPUやint16に流用しない。コードの実行再現は未実施。",
+    "evidence": [
+      {
+        "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Jia_Towards_Practical_Real-Time_Neural_Video_Compression_CVPR_2025_paper.pdf",
+        "locator": "§5.1; Tables 2–3"
+      }
+    ]
+  },
+  "P13": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "今回は要旨・導入を中心に確認。全数値実験の検算は未実施。"
+  },
+  "P14": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "特定比較の例を全学習型研究の誤りと一般化しない。重み付けの目的も明示する。"
+  },
+  "P15": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "画像・理論の基礎資料。動画の時間的一貫性や主観品質を直接保証するものではない。"
+  },
+  "P16": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "要旨のx265/SVT-HEVC/HMへの主張を、低遅延方式との公平な順位に使わない。"
+  },
+  "P17": {
+    "baseline": "未確認（未記載とは判定しない）",
+    "temporal_structure": "未確認（未記載とは判定しない）",
+    "test_data": "未確認（未記載とは判定しない）",
+    "color_and_metric": "未確認（未記載とは判定しない）",
+    "bit_accounting": "未確認（未記載とは判定しない）",
+    "hardware_and_precision": "未確認（未記載とは判定しない）",
+    "aggregation": "未確認（未記載とは判定しない）",
+    "unresolved": "未確認（未記載とは判定しない）",
+    "selection_caveat": "歴史的サーベイであり最新動向ではない。複数ツールを組み合わせた利得を一つの部品の効果にしない。"
+  }
+}

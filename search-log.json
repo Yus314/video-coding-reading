@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-23",
+  "strategy": "多様な種＋概念別検索＋本文の参考文献/後続研究による関係確認",
+  "queries": [
+    "Overview of the H.264 AVC video coding standard Wiegand 2003",
+    "Overview of the High Efficiency Video Coding HEVC Standard Sullivan 2012",
+    "CABAC context based adaptive binary arithmetic coding H264 Marpe 2003",
+    "Sullivan Wiegand Rate Distortion Optimization for Video Compression 1998",
+    "Variational image compression scale hyperprior Balle 2018",
+    "NeRV Neural Representations for Videos NeurIPS 2021",
+    "Scale Space Flow for End-to-End Optimized Video Compression CVPR 2020",
+    "The Rate Distortion Perception Tradeoff Blau Michaeli 2019",
+    "\"learned hierarchical bi-directional video compression\" Tekalp",
+    "\"Deep Learning-Based Video Coding\" \"In-Loop\" survey"
+  ],
+  "not_executed": [
+    "被引用データベース全件取得",
+    "全会議目次の走査",
+    "2026年の網羅的最新調査",
+    "コード実行・実験追試"
+  ],
+  "boundary": "引用関係を確認しても、初回発見経路を引用探索に書き換えない。"
+}

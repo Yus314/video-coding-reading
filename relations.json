@@ -1,0 +1,209 @@
+[
+  {
+    "from": "P10",
+    "to": "P08",
+    "type": "cites",
+    "meaning": "参考文献への収録を確認。支持・追試を意味しない。",
+    "quote": "[3] G. Lu, W. Ouyang, D. Xu, X. Zhang, C. Cai, and Z. Gao, “DVC: an end-to-end deep video compression framework,” in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11006–11015, 2019.",
+    "evidence_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf",
+    "evidence_locator": "References (書誌引用。本文の再配布ではない)"
+  },
+  {
+    "from": "P10",
+    "to": "P07",
+    "type": "cites",
+    "meaning": "参考文献への収録を確認。支持・追試を意味しない。",
+    "quote": "[13] J. Ballé, D. Minnen, S. Singh, S. J. Hwang, and N. Johnston, “Variational image compression with a scale hyperprior,” 6th International Conference on Learning Representations, ICLR, 2018.",
+    "evidence_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf",
+    "evidence_locator": "References (書誌引用。本文の再配布ではない)"
+  },
+  {
+    "from": "P14",
+    "to": "P10",
+    "type": "cites",
+    "meaning": "参考文献への収録を確認。支持・追試を意味しない。",
+    "quote": "J. Li, B. Li, and Y. Lu, “Deep contextual video compression,” _Advances in Neural Information Processing Systems_, vol. 34, 2021.",
+    "evidence_url": "https://arxiv.org/html/2409.08772",
+    "evidence_locator": "References (書誌引用。本文の再配布ではない)"
+  },
+  {
+    "from": "P14",
+    "to": "P11",
+    "type": "cites",
+    "meaning": "参考文献への収録を確認。支持・追試を意味しない。",
+    "quote": "H. Chen, B. He, H. Wang, Y. Ren, S.-N. Lim, and A. Shrivastava, “NeRV: Neural representations for videos,” in _NeurIPS_, 2021.",
+    "evidence_url": "https://arxiv.org/html/2409.08772",
+    "evidence_locator": "References (書誌引用。本文の再配布ではない)"
+  },
+  {
+    "from": "P14",
+    "to": "P16",
+    "type": "cites",
+    "meaning": "参考文献への収録を確認。支持・追試を意味しない。",
+    "quote": "M. A. Yılmaz and A. M. Tekalp, “End-to-end rate-distortion optimized learned hierarchical bi-directional video compression,” _IEEE Transactions on Image Processing_, vol. 31, pp. 974–983, 2022.",
+    "evidence_url": "https://arxiv.org/html/2409.08772",
+    "evidence_locator": "References (書誌引用。本文の再配布ではない)"
+  },
+  {
+    "from": "P01",
+    "to": "P02",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P01",
+    "to": "P03",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P01",
+    "to": "P04",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P01",
+    "to": "P05",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P01",
+    "to": "P06",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P06",
+    "to": "P07",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P01",
+    "to": "P08",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P06",
+    "to": "P08",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P07",
+    "to": "P08",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P08",
+    "to": "P09",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P07",
+    "to": "P10",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P08",
+    "to": "P10",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P06",
+    "to": "P11",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P07",
+    "to": "P11",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P10",
+    "to": "P12",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P13",
+    "to": "P12",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P14",
+    "to": "P12",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P06",
+    "to": "P13",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P13",
+    "to": "P14",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P06",
+    "to": "P15",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P08",
+    "to": "P16",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P01",
+    "to": "P17",
+    "type": "recommended_before",
+    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+  },
+  {
+    "from": "P03",
+    "to": "P04",
+    "type": "compare",
+    "meaning": "異なる標準化系統の設計対比（assistantの整理）"
+  },
+  {
+    "from": "P08",
+    "to": "P10",
+    "type": "compare",
+    "meaning": "残差符号化と特徴条件付けの対比（assistantの整理）"
+  },
+  {
+    "from": "P10",
+    "to": "P16",
+    "type": "compare",
+    "meaning": "逐次参照と階層双方向参照の条件対比（assistantの整理）"
+  },
+  {
+    "from": "P10",
+    "to": "P11",
+    "type": "compare",
+    "meaning": "汎用モデルと動画別適合のコスト対比（assistantの整理）"
+  },
+  {
+    "from": "P05",
+    "to": "P07",
+    "type": "compare",
+    "meaning": "確率モデルと副情報を考える学習上の対比（assistantの整理）"
+  }
+]
