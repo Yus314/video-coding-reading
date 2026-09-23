@@ -27,8 +27,7 @@
 
 ## 推奨学習順（recommended_before）
 
-- [P01](<papers/P01.md>) → [P02](<papers/P02.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
-- [P01](<papers/P01.md>) → [P03](<papers/P03.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
+- [P02](<papers/P02.md>) → [P03](<papers/P03.md>)：HEVCの共通骨格と分割用語の指定箇所を足場にVVCへ。両概説の全編通読を要求しない。
 - [P01](<papers/P01.md>) → [P04](<papers/P04.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
 - [P01](<papers/P01.md>) → [P05](<papers/P05.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
 - [P01](<papers/P01.md>) → [P06](<papers/P06.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
@@ -42,8 +41,6 @@
 - [P06](<papers/P06.md>) → [P11](<papers/P11.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
 - [P07](<papers/P07.md>) → [P11](<papers/P11.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
 - [P10](<papers/P10.md>) → [P12](<papers/P12.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
-- [P13](<papers/P13.md>) → [P12](<papers/P12.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
-- [P14](<papers/P14.md>) → [P12](<papers/P12.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
 - [P06](<papers/P06.md>) → [P13](<papers/P13.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
 - [P13](<papers/P13.md>) → [P14](<papers/P14.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。
 - [P06](<papers/P06.md>) → [P15](<papers/P15.md>)：assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。

@@ -2,9 +2,9 @@
 
 # 注釈付き文献一覧
 
-リリース：selection-and-maintenance-2
+リリース：reading-decisions-3
 
-範囲：目的別の文献地図。20論文＋3補助資料。体系的探索の一巡であり、最新網羅や普遍的な必読順位ではない。
+範囲：登録候補20論文＋補助資料3件。目的限定の追加参照はscreening.jsonとfollowup-review.mdに分離。必読順位・網羅調査ではない。
 
 `prerequisites` は必須依存関係ではなく、推奨学習順を表します。
 
@@ -45,16 +45,18 @@
 - 読む理由：AVCからVVCへ移る際の中間世代を把握する。
 - 読む問い：圧縮効率改善のため、どの設計の自由度を増やしたのか。
 - 他の候補との差：P01/P03間の系譜を埋め、HEVC比較論文の用語を理解できる。
-- 推奨学習順（必須依存ではない）：[P01](<papers/P01.md>)
-- 必要な背景知識：基本的な確率・信号処理の用語
-- 限界・注意：今回は出版社の要旨・書誌を確認。個別ツールの詳細は本文未確認。
-- 根拠の確認範囲：要旨・書誌確認 — IEEE Abstract / Metadata
-- 根拠資料：[原文](<https://ieeexplore.ieee.org/document/6316136/>)
+- 推奨学習順（必須依存ではない）：なし
+- 必要な背景知識：原画像・再構成画像・予測残差の区別。未習得ならII-Aの図から学ぶ
+- 限界・注意：共通構造とCTU/CU/PU/TUの指定箇所は本文確認。全ツールの精読・実験条件監査は未実施。確認版は2012年著者原稿体裁の大学講義用公開コピー。個人利用許諾表示を確認したが、ホストの転載許諾および出版社最終版との一致は未確認。正規本文提供経路の確保は保留。
+- 根拠の確認範囲：選択節本文確認（全編精読・性能再現ではない） — I Introductionの標準化範囲と本文構成 / II HEVC Coding Design and Feature Highlights: A Video coding layer（予測・残差・局所復号・CTU/CU/PU/TU） / II-B High-level syntax architecture冒頭 / Fig. 1 Typical HEVC video encoderの図題と説明本文
+- 根拠資料：[原文](<http://www.img.lx.it.pt/~fp/cav/Additional_material/HEVC-Overview.pdf>)
 - 読書状態：候補・利用者未読状態は未確認
-- 選定判断：維持（目的別の読む役割を限定）
-- 重要性：AVCからVVCへ移る際の中間世代を把握する。
-- 選定上の補完性・代替との関係：P01/P03間の系譜を埋め、HEVC比較論文の用語を理解できる。
-- 確信度：選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。
+- 個別根拠：HEVCの基本経路は、イントラ／インター予測の残差を変換・量子化・エントロピー符号化し、エンコーダ内でも逆量子化・逆変換・予測加算・ループフィルタを行って、デコーダと一致する参照画像を保存する構造である。（選択節本文・図題/本文説明確認（原図画像の全点検なし）、II-A Video coding layer、Fig. 1、[原文](<http://www.img.lx.it.pt/~fp/cav/Additional_material/HEVC-Overview.pdf>)）
+- 個別根拠：旧規格のマクロブロックに相当する単位はHEVCではCTUであり、四分木でCUに分け、その下で予測PUと変換TUの構造を区別する。したがって一般的なブロック符号化とHEVC固有の単位を一緒に学べる。（選択節本文・図題/本文説明確認（原図画像の全点検なし）、II-AのCoding Tree Units and Coding Tree Block structure、Coding Units and Coding Blocks、Prediction Units and Prediction Blocks、Transform Units and Transform Blocks、[原文](<http://www.img.lx.it.pt/~fp/cav/Additional_material/HEVC-Overview.pdf>)）
+- 選定判断：全文順次通読から、目的別の指定箇所読みに変更
+- 重要性：従来型ハイブリッド符号化の共通骨格とHEVCの分割単位を最小限で得る。
+- 選定上の補完性・代替との関係：共通骨格を得る目的ならHEVCの指定箇所を入口にしてAVC全文通読を省略できる、という読書設計上の判断。HEVC本文自身が旧規格のマクロブロックやAVCから保持した構造を説明するので、全歴史を先に読む必要はない。
+- 確信度：指定箇所の本文確認に基づく編集判断。人間の読書負担の改善は未測定。
 
 ## [P03](<papers/P03.md>) — Overview of the Versatile Video Coding (VVC) Standard and its Applications
 
@@ -68,16 +70,18 @@
 - 読む理由：現代的ハイブリッド方式の機能と用途を俯瞰する。
 - 読む問い：用途の多様化はどの符号化ツールや制約に結び付くか。
 - 他の候補との差：P04と対にし、単一の標準化系統に偏らない地図を作れる。
-- 推奨学習順（必須依存ではない）：[P01](<papers/P01.md>)
-- 必要な背景知識：基本的な確率・信号処理の用語
-- 限界・注意：要旨中の削減率を普遍的性能差にしない。VTMと実用実装を区別する。
-- 根拠の確認範囲：要旨・書誌確認 — Microsoft Research publication page / abstract
-- 根拠資料：[原文](<https://www.microsoft.com/en-us/research/publication/overview-of-the-versatile-video-coding-vvc-standard-and-its-applications/>)
+- 推奨学習順（必須依存ではない）：[P02](<papers/P02.md>)
+- 必要な背景知識：局所復号ループを説明できる, HEVCのCU/PU/TUの区別を参照できる
+- 限界・注意：要旨中の削減率を普遍的性能差にしない。VTMと実用実装を区別する。 確認版：IEEE TCSVT 31(10), 3736–3764, 2021。RWTH repository提供の出版社組版本文。本文の date of current version は October 4, 2021。arXiv版や別のVVC概説と混同しない。
+- 根拠の確認範囲：選択節本文確認（全編精読・性能再現ではない） — II-B Core Compression Technologiesの導入とFig. 4 / II-B.1 Block Partitioning / II-B.2 Intra-Picture Prediction（特にMIP） / II-B.6 In-Loop Filters
+- 根拠資料：[原文](<https://publications.rwth-aachen.de/record/835221/files/835221.pdf>)
 - 読書状態：候補・利用者未読状態は未確認
-- 選定判断：維持（目的別の読む役割を限定）
-- 重要性：現代的ハイブリッド方式の機能と用途を俯瞰する。
-- 選定上の補完性・代替との関係：P04と対にし、単一の標準化系統に偏らない地図を作れる。
-- 確信度：選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。
+- 個別根拠：VVCはハイブリッド符号化を保持しつつ、HEVCの四分木をQT+MTTへ拡張し、二分／三分分割と非正方形CUを扱う。HEVCのPUは使わず、一般化したCU形状で予測・変換処理を担う。（選択節本文・図題/本文説明確認（原図画像の全点検なし）、II-B Core Compression Technologies、Fig. 4 Typical VVC encoder、II-B.1 Block PartitioningのQT+MTT、[原文](<https://publications.rwth-aachen.de/record/835221/files/835221.pdf>)）
+- 個別根拠：VVCのループ内処理は単なるHEVCの再説明ではない。LMCSの逆輝度写像を他フィルタより前に配置し、HEVCのSAOは保持してdeblocking後・ALF前に置く。ALFではフィルタ係数とクリッピングパラメータをエンコーダが決め、APSで伝える。（選択節本文・図題/本文説明確認（原図画像の全点検なし）、II-B.6 In-Loop Filters、LMCSおよびALF項目、Fig. 4、[原文](<https://publications.rwth-aachen.de/record/835221/files/835221.pdf>)）
+- 選定判断：全文順次通読から、目的別の指定箇所読みに変更
+- 重要性：現代的な従来型コーデックのツールを、共通骨格への追加／置換として配置する。
+- 選定上の補完性・代替との関係：現代的なツール地図が目的ならVVC II-Bを主教材にし、HEVCはII-Aの基礎に限定する方が直接的。VVC本文がHEVCとの差を明示し、QT+MTT・MIP・LMCS/ALFを説明している。
+- 確信度：指定箇所の本文確認に基づく編集判断。人間の読書負担の改善は未測定。
 
 ## [P04](<papers/P04.md>) — A Technical Overview of AV1
 
@@ -92,15 +96,17 @@
 - 読む問い：似た予測・変換構造でも、どの設計選択が異なるか。
 - 他の候補との差：P03の単なる代替でなく、設計対比の相手。
 - 推奨学習順（必須依存ではない）：[P01](<papers/P01.md>)
-- 必要な背景知識：基本的な確率・信号処理の用語
-- 限界・注意：今回確認したのはarXiv v2の要旨。最新AV1実装の性能を示す資料ではない。
-- 根拠の確認範囲：要旨・書誌確認 — arXiv v2 abstract / submission history
-- 根拠資料：[原文](<https://arxiv.org/abs/2008.06091>)
+- 必要な背景知識：参照画像と表示画像の違いを意識できる, エンコーダ探索と規範的復号処理を区別する
+- 限界・注意：確認版はarXiv:2008.06091v2（2021-02-08）。分割・ループ内/外処理等の指定節本文を確認。出版社最終版との同一性、最新AV1実装の性能、全文精読・実験条件監査は未確認。
+- 根拠の確認範囲：選択節本文確認（全編精読・性能再現ではない） — I末尾の論文の役割 / II High Level Syntax / III-A/B Reference Frames / Alternate Reference Frame / IV Superblock and Tile（Fig. 1） / V-A Coding Block Partitioning（Fig. 2） / VII Post-Processing Filters導入（Fig. 31）
+- 根拠資料：[原文](<https://arxiv.org/pdf/2008.06091v2>)
 - 読書状態：候補・利用者未読状態は未確認
-- 選定判断：維持（目的別の読む役割を限定）
-- 重要性：別の標準化系統とハードウェア実現性の視点を導入する。
-- 選定上の補完性・代替との関係：P03の単なる代替でなく、設計対比の相手。
-- 確信度：選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。
+- 個別根拠：AV1の分割設計はVP9の再帰分割を継承・拡張しつつ、ハードウェア復号の処理単位や小ブロック時の依存を制約する。柔軟な分割を実際の符号化に活かすにはエンコーダ探索が必要で、本文は二段階探索を一つの方法として提示する。（選択節本文・図題/本文説明確認（原図画像の全点検なし）、V-A Coding Block Partitioning、V-A.1 Block Size Dependent Constraints、V-A.2 Two-Stage Block Partitioning Search、Fig. 2；PDF pp. 3–4、[原文](<https://arxiv.org/pdf/2008.06091v2>)）
+- 個別根拠：AV1はdeblocking、CDEF、loop restorationというループ内フィルタを持ち、その出力は後続フレームの参照になる。一方film grain synthesisは表示前のループ外処理で、その結果は後続予測に影響しない。（選択節本文・図題/本文説明確認（原図画像の全点検なし）、VII Post-Processing Filters導入、Fig. 31；PDF p. 17、[原文](<https://arxiv.org/pdf/2008.06091v2>)）
+- 選定判断：全文順次通読から、目的別の指定箇所読みに変更
+- 重要性：AV1の設計理由・ハードウェア制約と、規範仕様／エンコーダ戦略の境界を理解する。
+- 選定上の補完性・代替との関係：設計理解の初回読書にはoverviewが仕様全文の代替になるが、規範の代替にはならない。overview I/II自体がsyntax elementとdecoder logicを仕様に委ねる。実例として仕様5.3.2はOBUヘッダ各フィールドのビット幅、6.2.2はobu_forbidden_bit=0やサイズフィールド有無を規定し、overview IIの役割説明より厳密である。
+- 確信度：指定箇所の本文確認に基づく編集判断。人間の読書負担の改善は未測定。
 
 ## [P05](<papers/P05.md>) — Context-Based Adaptive Binary Arithmetic Coding in the H.264/AVC Video Compression Standard
 
@@ -163,7 +169,7 @@
 - 読む問い：副情報を送るコストを払っても、なぜ全体の符号量を減らせるのか。
 - 他の候補との差：P08/P10に入る前の画像符号化・確率モデルの橋渡し。
 - 推奨学習順（必須依存ではない）：[P06](<papers/P06.md>)
-- 必要な背景知識：基本的な確率・信号処理の用語, ニューラルネットワークの基礎, 量子化と確率モデルの区別
+- 必要な背景知識：量子化とentropy modelとentropy coderを区別できる, 復号側で使う情報の出所を追える
 - 限界・注意：画像圧縮の論文。時間方向の予測や長系列安定性を解いたとは扱わない。
 - 根拠の確認範囲：本文の構造・符号化順序・評価上の注意を確認 — arXiv v2 §2–3; Fig.2–4; §4.2 Fig.5/7; §5
 - 根拠資料：[原文](<https://arxiv.org/html/1802.01436v2>)
@@ -171,9 +177,9 @@
 - 個別根拠：量子化したhyperlatent zを副情報として先に復号し、予測した尺度を使って画像latent yの確率を得て復号する。副情報の費用も損失に含む。（指定本文箇所確認、§3; Eq.10; Fig.3–4、[原文](<https://arxiv.org/html/1802.01436v2>)）
 - 個別根拠：factorized priorに残る依存を尺度で説明する設計であり、画像latentの全依存を完全に消したとの保証ではない。（指定本文箇所確認、§2 Fig.2; §3; §5、[原文](<https://arxiv.org/html/1802.01436v2>)）
 - 個別根拠：Fig.5のPSNR曲線は等lambda、MS-SSIM曲線は補間した等rateで集約する。学習損失と評価指標・集約条件を分けて読む。（指定本文箇所確認、§4.2; Fig.5 caption、[原文](<https://arxiv.org/html/1802.01436v2>)）
-- 選定判断：維持（目的別の読む役割を限定）
+- 選定判断：該当節を推薦。背景が不足する読者はS03を先行
 - 重要性：学習型映像符号化の前提となる潜在表現と副情報を理解する。
-- 選定上の補完性・代替との関係：P08/P10に入る前の画像符号化・確率モデルの橋渡し。
+- 選定上の補完性・代替との関係：概念説明はS03 §3.2.1/§3.3.5で代替可能。P07 §3/Fig.3–4は具体的構成と副情報費用を原著で追う時に読む。
 - 確信度：符号化順序と費用を本文で確認し、概念教材としての根拠を補強。影響度の定量評価は未実施。
 
 ## [P08](<papers/P08.md>) — DVC: An End-To-End Deep Video Compression Framework
@@ -189,16 +195,16 @@
 - 読む問い：従来の予測構造を残しつつ、何を共同最適化したのか。
 - 他の候補との差：P10との対比に必要な残差符号化側の足場。
 - 推奨学習順（必須依存ではない）：[P01](<papers/P01.md>), [P06](<papers/P06.md>), [P07](<papers/P07.md>)
-- 必要な背景知識：基本的な確率・信号処理の用語, ニューラルネットワークの基礎, 量子化と確率モデルの区別
+- 必要な背景知識：予測残差と動きの符号量を区別できる, 量子化した参照から再構成するループを説明できる
 - 限界・注意：主結果は特定のFFmpeg設定。別実装・presetへの優位性に拡張しない。
 - 根拠の確認範囲：本文の構造・実験条件確認 — CVPR paper §3; §4.1–4.2
 - 根拠資料：[原文](<https://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_DVC_An_End-To-End_Deep_Video_Compression_Framework_CVPR_2019_paper.pdf>)
 - 読書状態：候補・利用者未読状態は未確認
 - 個別根拠：動き推定・補償と、動き／残差の表現を用いる構造を共同のRD損失で学習する。従来型との部品対応を示す。（指定本文箇所確認、§3.2; Fig.2; §3.6、[原文](<https://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_DVC_An_End-To-End_Deep_Video_Compression_Framework_CVPR_2019_paper.pdf>)）
 - 個別根拠：本文の従来型比較はFFmpeg very fast mode、GOPはUVG=12、HEVC=10。普遍的な規格間性能差ではない。（指定本文箇所確認、§4.1–4.2、[原文](<https://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_DVC_An_End-To-End_Deep_Video_Compression_Framework_CVPR_2019_paper.pdf>)）
-- 選定判断：維持（目的別の読む役割を限定）
+- 選定判断：動き＋残差の橋渡しとして維持。既知なら省略
 - 重要性：動き・残差を学習器で符号化する構造を従来型と対応させる。
-- 選定上の補完性・代替との関係：P10との対比に必要な残差符号化側の足場。
+- 選定上の補完性・代替との関係：P18にも動画符号化の設計があるが、従来型部品との対応にはP08を選ぶ。P18の学習状態だけが目的ならP08全編は不要。
 - 確信度：選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。
 
 ## [P09](<papers/P09.md>) — Scale-Space Flow for End-to-End Optimized Video Compression
@@ -237,7 +243,7 @@
 - 読む問い：条件情報をencoder・decoder・entropy modelのどこでどう使うのか。
 - 他の候補との差：P08からの概念差を学ぶ。小さな性能差だけを選定理由にしない。
 - 推奨学習順（必須依存ではない）：[P07](<papers/P07.md>), [P08](<papers/P08.md>)
-- 必要な背景知識：基本的な確率・信号処理の用語, ニューラルネットワークの基礎, 量子化と確率モデルの区別
+- 必要な背景知識：動き＋残差型の情報経路を説明できる, 副情報から復号側で確率モデルを再現する意味が分かる
 - 限界・注意：DVC原著と比較条件が異なる。著者らによる同条件での再評価と原著値を区別する。
 - 根拠の確認範囲：本文の構造・実験条件確認 — NeurIPS paper §3–4.2
 - 根拠資料：[原文](<https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf>)
@@ -245,10 +251,10 @@
 - 個別根拠：特徴空間のcontextをencoder、decoder、entropy modelに与える。単に残差画像を別名で送る設計ではない。（指定本文箇所確認、§3.1–3.3; Fig.1–2、[原文](<https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf>)）
 - 個別根拠：context learningは再構成参照と符号化された動きを使う。受信側が原フレームを無料で参照するわけではない。（指定本文箇所確認、§3.3、[原文](<https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf>)）
 - 個別根拠：DVC/DVCProを同じintra codecで再評価し、x264/x265はveryslowとconstant QPで比較する。DVC原著値と混ぜない。（指定本文箇所確認、§4.1–4.2、[原文](<https://proceedings.neurips.cc/paper_files/paper/2021/file/96b250a90d3cf0868c83f8c965142d2a-Paper.pdf>)）
-- 選定判断：維持（目的別の読む役割を限定）
+- 選定判断：構造を読む入口として維持。理論の条件にはF02を併用
 - 重要性：残差との対比に有用。ただし学習型の発展をDVC→DCVCという唯一の系譜で説明しない。P18を別系統として併読。
-- 選定上の補完性・代替との関係：P08からの概念差を学ぶ。小さな性能差だけを選定理由にしない。
-- 確信度：選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。
+- 選定上の補完性・代替との関係：F02は情報bottleneckの前提を補うが、DCVCのencoder/decoder/entropy modelへのcontext供給を説明するP10の代わりにはしない。
+- 確信度：§3.1–3.3の構造は確認済み。理想的な条件付き符号化の利点を有限実装の無条件優位としない。追加参照F02はfollowup-review.md。
 
 ## [P11](<papers/P11.md>) — NeRV: Neural Representations for Videos
 
@@ -285,15 +291,15 @@
 - 読む理由：圧縮率以外の実装コストとデバイス間整合性を読む。
 - 読む問い：演算量削減だけで速度が上がるか。整数化すると何を失い何を得るか。
 - 他の候補との差：P10系統の後続を、単なるRD改善でなく実用性の観点で選定する。
-- 推奨学習順（必須依存ではない）：[P10](<papers/P10.md>), [P13](<papers/P13.md>), [P14](<papers/P14.md>)
-- 必要な背景知識：基本的な確率・信号処理の用語, ニューラルネットワークの基礎, 量子化と確率モデルの区別
+- 推奨学習順（必須依存ではない）：[P10](<papers/P10.md>)
+- 必要な背景知識：特徴contextを使う基本構造を説明できる, 処理速度の測定範囲とend-to-end遅延を区別する必要を理解する
 - 限界・注意：A100・fp16の値を全GPUやint16に流用しない。コードの実行再現は未実施。
 - 根拠の確認範囲：本文の構造・実験条件確認 — CVPR paper §5.1; Tables 2–3; Fig.5(c)
 - 根拠資料：[原文](<https://openaccess.thecvf.com/content/CVPR2025/papers/Jia_Towards_Practical_Real-Time_Neural_Video_Compression_CVPR_2025_paper.pdf>)
 - 読書状態：候補・利用者未読状態は未確認
 - 選定判断：維持（目的別の読む役割を限定）
 - 重要性：圧縮率以外の実装コストとデバイス間整合性を読む。
-- 選定上の補完性・代替との関係：P10系統の後続を、単なるRD改善でなく実用性の観点で選定する。
+- 選定上の補完性・代替との関係：構造・実装制約を知るならP12。長系列の特徴更新という設計過程はF01 §3.3を参照。P13/P14は性能値を解釈する時に戻る。
 - 確信度：選定理由は編集上の判断。分野全体の必読合意や引用数順位は未検証。
 
 ## [P13](<papers/P13.md>) — The Bjøntegaard Bible: Why your Way of Comparing Video Codecs May Be Wrong
@@ -426,16 +432,16 @@
 - 読む問い：再構成フレームだけでなく状態を引き継ぐことで、何を表現でき、何を送る必要があるか。
 - 他の候補との差：DVC→DCVCだけの系譜を補正する。性能順位ではなく状態・制御という設計軸を追加。
 - 推奨学習順（必須依存ではない）：[P08](<papers/P08.md>)
-- 必要な背景知識：P01で扱う基本構造, レート歪みの概念
+- 必要な背景知識：再構成画像と次フレームへ保持する状態を区別できる
 - 限界・注意：当時のlow-latency条件の主張。全実験設定・現在の実装比較・再現は未確認。
 - 根拠の確認範囲：本文の構造とレート制御節確認 — §2.1; §3; §4.1–4.2
 - 根拠資料：[原文](<https://openaccess.thecvf.com/content_ICCV_2019/papers/Rippel_Learned_Video_Compression_ICCV_2019_paper.pdf>)
 - 読書状態：候補・利用者の既読状態は未確認
 - 個別根拠：一般化した学習状態を引き継ぎ、低帯域のbottleneckを通じて更新する。state-to-frameから再構成する。（指定本文箇所確認、§2.1; Fig.5、[原文](<https://openaccess.thecvf.com/content_ICCV_2019/papers/Rippel_Learned_Video_Compression_ICCV_2019_paper.pdf>)）
 - 個別根拠：空間的な可変rateを扱う機構と、RD曲線の傾きを用いるrate controllerを分けて記述する。（指定本文箇所確認、§4.1–4.2、[原文](<https://openaccess.thecvf.com/content_ICCV_2019/papers/Rippel_Learned_Video_Compression_ICCV_2019_paper.pdf>)）
-- 選定判断：追加（共通導入には追加しない）
+- 選定判断：状態伝播が目的なら§2.1を読む。空間制御は必要時のみ
 - 重要性：学習した状態の伝播、動きと残差の共同表現、空間レート制御を別系統として読む。
-- 選定上の補完性・代替との関係：DVC→DCVCだけの系譜を補正する。性能順位ではなく状態・制御という設計軸を追加。
+- 選定上の補完性・代替との関係：従来型への対応はP08で代替するが、学習状態の更新を読む用途はP18を残す。全編をP10の前提にしない。
 - 確信度：§2.1/§4を確認し、別設計の教材として選定。全比較実験は未監査。
 
 ## [P19](<papers/P19.md>) — λ Domain Rate Control Algorithm for High Efficiency Video Coding

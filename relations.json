@@ -45,16 +45,10 @@
     "evidence_locator": "References (書誌引用。本文の再配布ではない)"
   },
   {
-    "from": "P01",
-    "to": "P02",
-    "type": "recommended_before",
-    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
-  },
-  {
-    "from": "P01",
+    "from": "P02",
     "to": "P03",
     "type": "recommended_before",
-    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
+    "meaning": "HEVCの共通骨格と分割用語の指定箇所を足場にVVCへ。両概説の全編通読を要求しない。"
   },
   {
     "from": "P01",
@@ -130,18 +124,6 @@
   },
   {
     "from": "P10",
-    "to": "P12",
-    "type": "recommended_before",
-    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
-  },
-  {
-    "from": "P13",
-    "to": "P12",
-    "type": "recommended_before",
-    "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"
-  },
-  {
-    "from": "P14",
     "to": "P12",
     "type": "recommended_before",
     "meaning": "assistantが提案する読書上の前提。歴史的発明・直接引用の主張ではない。"

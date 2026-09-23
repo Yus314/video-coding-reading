@@ -50,6 +50,42 @@
       ],
       "stopping_reason": "別のサーベイ視点と具体的追加/保留判断を得た一巡で停止。引用網全件・全会議走査の飽和を主張しない。",
       "checked_on": "2026-09-24"
+    },
+    {
+      "id": "reading-decisions-3",
+      "checked_on": "2026-09-24",
+      "objective": "中心資料の本文確認、代替/省略の具体化、条件付き方式の後続と限界を調べる。",
+      "queries": [
+        "Overview High Efficiency Video Coding HEVC Standard Sullivan Oh Han Wiegand pdf 2012",
+        "Overview Versatile Video Coding Standard applications Bross pdf 2021",
+        "A Technical Overview AV1 Han 2021 arxiv",
+        "DCVC follow up feature modulation reference frame learned video compression CVPR 2024",
+        "video compression conditional coding limitations residual context",
+        "HEVC tutorial block partition transform parallel processing"
+      ],
+      "discovery_and_followup": [
+        "従来型三概説は既知文献の本文所在確認。未知候補探索と数えない。",
+        "同系列のF01と別グループのF02を検索で発見/選定し、原文のDCVC引用を後から確認。前方引用DBの走査ではない。",
+        "S03 §3.2.1/§3.3.5とP07の読み始めを比較。"
+      ],
+      "changed_decisions": [
+        "S03の該当節で前提を補い、P07は構造図の対象読みに変更。",
+        "P08/P18を全編順に読むことを要求しない。",
+        "P12の推奨先行論文からP13/P14を外し、評価時の参照に変更。",
+        "F01/F02は目的限定の節参照にして主コレクションを増やさない。",
+        "AVC→HEVC→VVC→AV1の全編順次通読をやめ、共通骨格からVVC/AV1へ分岐。正確な構文は承認済み仕様を参照。"
+      ],
+      "stopping_reason": "学習型の一つの経路について読む箇所/省略/戻り先と、後続研究による判断変更を具体化。網羅性や人間の理解度を検証したとはしない。",
+      "not_executed": [
+        "被引用DB全件取得",
+        "人間の読書試行",
+        "原図数値の全照合",
+        "実装/モデル再現"
+      ],
+      "retrieval_limitations": [
+        "HEVCは大学講義用コピーを読んだ。原著者/出版社の現存する正規本文経路は未確保、転載しない。",
+        "VVCはRWTH掲載版、AV1はarXiv v2。抽出本文の選択節と図題を確認し、全原図点検や性能再現は未実施。"
+      ]
     }
   ]
 }

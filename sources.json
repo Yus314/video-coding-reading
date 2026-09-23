@@ -3,13 +3,19 @@
     "url": "https://www.cs.ubc.ca/~krasic/cpsc538a/papers/h264avc-overview.pdf"
   },
   "P02": {
-    "url": "https://ieeexplore.ieee.org/document/6316136/"
+    "url": "http://www.img.lx.it.pt/~fp/cav/Additional_material/HEVC-Overview.pdf",
+    "inspected_version": "2012年の著者原稿体裁の公開コピー。本文に Manuscript received May 25, 2012、末尾に INSERT PAGE NUMBER の未処理箇所がある。巻号頁付き出版社最終版と同一とは認定しない。明示的な改訂番号・改訂日は確認できない。",
+    "official_landing": "https://ieee-cas.org/media/overview-high-efficiency-video-coding-hevc-standard"
   },
   "P03": {
-    "url": "https://www.microsoft.com/en-us/research/publication/overview-of-the-versatile-video-coding-vvc-standard-and-its-applications/"
+    "url": "https://publications.rwth-aachen.de/record/835221/files/835221.pdf",
+    "inspected_version": "IEEE TCSVT 31(10), 3736–3764, 2021。RWTH repository提供の出版社組版本文。本文の date of current version は October 4, 2021。arXiv版や別のVVC概説と混同しない。",
+    "official_landing": "https://doi.org/10.18154/rwth-2021-10388"
   },
   "P04": {
-    "url": "https://arxiv.org/abs/2008.06091"
+    "url": "https://arxiv.org/pdf/2008.06091v2",
+    "inspected_version": "arXiv:2008.06091v2、2021-02-08改訂。PDFの透かしとabsの投稿履歴を照合。IEEE提出原稿の注意書きがあり、出版社最終版と同一とは認定しない。",
+    "official_landing": "https://arxiv.org/abs/2008.06091"
   },
   "P05": {
     "url": "https://iphome.hhi.de/marpe/download/cabac_ieee03.pdf"
@@ -82,6 +88,6 @@
     "identifier": "10.1561/0600000107",
     "version": "arXiv:2202.06533v3",
     "role": "補助教材・別系統の探索入口",
-    "evidence_depth": "目次・§3.7・参考文献[153]を中心に確認。全章精読ではない。"
+    "evidence_depth": "目次・§3.2.1/§3.3.5/§3.7・参考文献[153]を確認。全章精読ではない。"
   }
 }

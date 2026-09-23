@@ -1,5 +1,5 @@
 {
-  "scope": "今回実際に内容または要旨を確認して採否判断した候補。全検索結果の網羅的除外ログではない。",
+  "scope": "実際に確認し採否判断した候補の累積記録。主候補、補助資料、保留、目的限定参照を別扱い。全検索結果の網羅ログではない。",
   "decisions": [
     {
       "candidate": "Learned Video Compression",
@@ -54,6 +54,32 @@
       "reason": "rate allocationとrate implementationの分離がP19との比較候補。要旨のみで従来型を置き換えたり性能順位にしない。",
       "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8c1d92835eb4e601f396c97ec60439fe-Abstract-Conference.html",
       "locator": "Abstract"
+    },
+    {
+      "candidate_id": "F01",
+      "candidate": "Neural Video Compression with Feature Modulation",
+      "identifier": "arXiv:2402.17414",
+      "version_inspected": "CVPR 2024 official proceedings PDF",
+      "decision": "目的限定参照。長系列/品質可変性を読む時のみ。主候補20論文には追加しない。",
+      "discovered_by": "DCVC follow up feature modulation reference frame learned video compression CVPR 2024; 後からReferences [24]のDCVC引用を確認",
+      "reason": "P10の構造理解を長系列への保証と取り違えないため。P12の前に全後続論文を読む必要はない。",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Neural_Video_Compression_with_Feature_Modulation_CVPR_2024_paper.pdf",
+      "locator": "§3.2–3.3; Fig.5–6; §4.1; References [24]",
+      "checked_on": "2026-09-24",
+      "detail": "followup-review.md"
+    },
+    {
+      "candidate_id": "F02",
+      "candidate": "Conditional Residual Coding: A Remedy for Bottleneck Problems in Conditional Inter Frame Coding",
+      "identifier": "arXiv:2307.12864",
+      "version_inspected": "v2 / 2024-01-26 (初稿2023年)",
+      "decision": "目的限定参照。条件付き符号化の理論的利点を論じる際の確認資料。主候補には追加しない。",
+      "discovered_by": "video compression conditional coding limitations residual contextという概念検索。後から§II-B / References [10]のDCVC引用を確認。",
+      "reason": "別研究グループの情報bottleneck分析。有限の特徴経路と理想化した条件付き符号化を区別する。",
+      "source_url": "https://arxiv.org/html/2307.12864v2",
+      "locator": "§III; Fig.2; §IV-A; §V（定義中心）; References [10]",
+      "checked_on": "2026-09-24",
+      "detail": "followup-review.md"
     }
   ]
 }

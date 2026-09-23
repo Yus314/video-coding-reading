@@ -19,7 +19,7 @@
     "hardware_and_precision": "未確認（未記載とは判定しない）",
     "aggregation": "未確認（未記載とは判定しない）",
     "unresolved": "未確認（未記載とは判定しない）",
-    "selection_caveat": "今回は出版社の要旨・書誌を確認。個別ツールの詳細は本文未確認。"
+    "selection_caveat": "構造に関する選択節本文を確認。確認版・範囲・取得上の留保はpapers.jsonの同IDを参照。性能比較条件の監査とは別。"
   },
   "P03": {
     "baseline": "未確認（未記載とは判定しない）",
@@ -30,7 +30,7 @@
     "hardware_and_precision": "未確認（未記載とは判定しない）",
     "aggregation": "未確認（未記載とは判定しない）",
     "unresolved": "未確認（未記載とは判定しない）",
-    "selection_caveat": "要旨中の削減率を普遍的性能差にしない。VTMと実用実装を区別する。"
+    "selection_caveat": "構造に関する選択節本文を確認。確認版・範囲・取得上の留保はpapers.jsonの同IDを参照。性能比較条件の監査とは別。"
   },
   "P04": {
     "baseline": "未確認（未記載とは判定しない）",
@@ -41,7 +41,7 @@
     "hardware_and_precision": "未確認（未記載とは判定しない）",
     "aggregation": "未確認（未記載とは判定しない）",
     "unresolved": "未確認（未記載とは判定しない）",
-    "selection_caveat": "今回確認したのはarXiv v2の要旨。最新AV1実装の性能を示す資料ではない。"
+    "selection_caveat": "構造に関する選択節本文を確認。確認版・範囲・取得上の留保はpapers.jsonの同IDを参照。性能比較条件の監査とは別。"
   },
   "P05": {
     "baseline": "未確認（未記載とは判定しない）",
