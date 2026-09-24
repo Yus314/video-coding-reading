@@ -59,6 +59,32 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(catalog.CatalogError, fragment):
             catalog.validate(self.root)
 
+    def test_reading_question_precedes_bibliographic_metadata(self):
+        for card in (True, False):
+            text = "\n".join(catalog._paper_lines(paper(), card=card))
+            self.assertLess(text.index("- 読む問い："), text.index("- 著者："))
+
+    def test_identical_selection_explanations_are_not_repeated(self):
+        p = paper()
+        p["selection"] = {"decision": "維持", "importance": p["reason_to_read"],
+                          "alternative": p["marginal_value"], "confidence": "編集判断"}
+        text = "\n".join(catalog._paper_lines(p, card=True))
+        self.assertNotIn("- 役割：", text)
+        self.assertNotIn("- 重要性：", text)
+        self.assertNotIn("- 選定上の補完性・代替との関係：", text)
+        self.assertIn("- 選定判断：維持", text)
+        self.assertIn("- 確信度：編集判断", text)
+
+    def test_distinct_selection_explanations_are_preserved(self):
+        p = paper()
+        p["selection"] = {"decision": "維持", "importance": "歴史的位置付け",
+                          "alternative": "別教材との比較", "confidence": "編集判断"}
+        text = "\n".join(catalog._paper_lines(p, card=True))
+        self.assertIn("- 重要性：歴史的位置付け", text)
+        self.assertIn("- 選定上の補完性・代替との関係：別教材との比較", text)
+        self.assertIn("- 限界・注意：限界", text)
+        self.assertIn("- 根拠の確認範囲：要旨確認", text)
+
     def test_valid_roundtrip_is_byte_deterministic_and_check_is_read_only(self):
         first = paper()
         first["required_background"] = ["確率論"]

@@ -113,6 +113,10 @@
       {
         "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf",
         "locator": "§3.2–3.4"
+      },
+      {
+        "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf",
+        "locator": "Fig.1–2 画像確認。Fig.2の動きlatentからResidual Decoderへの条件入力を確認。性能監査ではない。"
       }
     ]
   },

@@ -33,6 +33,22 @@
       "locator": "Fig.31 / PDF p.17",
       "observed": "Decoded Frame→Deblocking→CDEF→Loop Restoration→Reference Frame Buffer。loop restoration後からFilm Grain Synthesis→Display Pictureへ別枝がある。この図にはsuper-resolutionのブロックは描かれていない。",
       "reading_action": "参照に使う画像と表示用画像の分岐を読む用途に限定。規範的な全復号順序の完全図として使わない。"
+    },
+    {
+      "paper": "P09",
+      "version": "CVPR 2020 proceedings",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf",
+      "locator": "Fig.1 / PDF p.1",
+      "observed": "displacement field (g_x,g_y)、scale field (g_z)、積層volume、補間出力が描かれる。",
+      "reading_action": "位置とぼかし側の座標を分ける。latent量子化や確率分布の尺度と同一視しない。"
+    },
+    {
+      "paper": "P09",
+      "version": "CVPR 2020 proceedings",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf",
+      "locator": "Fig.2 / PDF p.2",
+      "observed": "[z_0]からI-Decoder、[w_i]からScale Space Flow Decoder、[v_i]からResidual Decoder。さらに[w_i]からResidual Decoderへの横向き接続。予測と復号残差を加算して再構成する。hyperpriorの詳細は描かれていない。",
+      "reading_action": "残差再構成にも動きlatentが入力される点を追う。これをResidual Encoderへの追加接続や、entropy decodingの物理順序の保証へ拡張しない。"
     }
   ]
 }

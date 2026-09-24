@@ -2,6 +2,15 @@
 
 論文名を集めるだけでなく、**何のために、どこを読み、どの条件まで信じられるか**を整理した公開資料です。最新の網羅調査や性能ランキングではありません。
 
+## まず一つだけ読むなら
+
+分野全体の勉強を始める前に、目的に合う作業を一つ選べます。所要時間は未測定です。
+
+- **圧縮器の基本構造**：[HEVCの案内](conventional-reading.md)からP02 **II-A / Fig.1**。原画像と再構成参照の違いを追う。両者がなぜ必要か説明できたら、他の規格の全ツール一覧は後回し。
+- **学習型の副情報**：[Hyperprior原文](https://arxiv.org/pdf/1802.01436v2) **§3 / Fig.4**。`zの復号 → 確率パラメータ → yの復号`を追う。[六つの問い](reading-lab.md)は分からない箇所だけ使う。
+- **別論文へ読み方を応用**：[Scale-Space Flow原文](https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf) **Fig.2 / §3.2**。DVC等で動き・残差の基本を理解済みなら、動きlatentからResidual Decoderへの接続も追い、[案内末尾のP09例](reading-lab.md)と照合する。性能表は今は不要。
+- **速度の報告を評価**：[DCVC-RT監査](evidence-audit.md)の「判定」と「公開コードで具体化した境界」。含む処理・除く処理・未確認を分ける。モデルを実行しなくても測定範囲の理解は進められる。
+
 ## 目的から始める
 
 ### 仕組みを理解したい

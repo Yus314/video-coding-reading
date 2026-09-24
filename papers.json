@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "release": "question-transfer-5",
+  "release": "reading-entry-6",
   "scope": "登録候補20論文＋補助資料3件。目的限定参照・独立探索の対応と採否はscreening.json、followup-review.md、independent-review.json。全員向け必読順位・網羅調査ではない。",
   "papers": [
     {
@@ -417,9 +417,9 @@
       "reading_question": "隠れていた領域の出現や速い動きを、通常のワーピングからどう改善するか。",
       "marginal_value": "残差→条件付けだけでない設計軸をP08に追加する。",
       "limitations": "指定method節の構造確認。物理的bitstream配置・実ビット計測・全実験設定・性能再現は未監査。P09でのz_0はI画像latent。",
-      "evidence_depth": "会議版§3.1–3.4の指定本文確認（図画像・補足・実装は未確認）",
+      "evidence_depth": "会議版§3.1–3.4の指定本文とFig.1–2の画像確認（補足・実装未確認）",
       "evidence_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf",
-      "evidence_locator": "CVPR 2020 §3.1–3.4; Fig.2 caption（図画像は未確認）",
+      "evidence_locator": "CVPR 2020 §3.1–3.4; Fig.1（PDF p.1）・Fig.2（PDF p.2）画像確認",
       "status": "候補・利用者未読状態は未確認",
       "selected_by": "assistant",
       "code_reproduced": false,
@@ -448,6 +448,12 @@
           "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf",
           "locator": "§3.1 Eq.(2)–(3), Reparameterization; §3.3",
           "depth": "指定本文確認"
+        },
+        {
+          "claim": "Fig.2では動きlatent [w_i]がResidual Decoderにも入力される。残差の再構成を[v_i]だけに依存する枝として描かない。entropy decodingの物理的順序や実装の並列性はこの図から確定しない。",
+          "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf",
+          "locator": "Fig.2 / PDF p.2",
+          "depth": "原図画像の拡大確認。実装未監査"
         }
       ]
     },

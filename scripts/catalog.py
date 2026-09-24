@@ -254,16 +254,15 @@ def _paper_lines(paper: dict, *, card: bool) -> list[str]:
         if prerequisites else "なし"
     )
     lines = [
+        f"- 読む問い：{_text(paper['reading_question'])}",
+        f"- 読む理由：{_text(paper['reason_to_read'])}",
+        f"- 他の候補との差：{_text(paper['marginal_value'])}",
         f"- 著者：{_text(paper['authors_display'])}",
         f"- 年・版：{paper['year']} / {_text(paper['venue_version'])}",
         f"- 識別子：{_text(paper['identifier'])}",
         f"- 論文：{_link('公開ページ', paper['url'])}",
         f"- 分類：{_text(paper['branch'])} / {_text(paper['role'])} / {_text(paper['queue'])}",
-        f"- 役割：{_text(paper['role'])}",
         f"- 発見経路：{_text(paper['discovery_route'])}",
-        f"- 読む理由：{_text(paper['reason_to_read'])}",
-        f"- 読む問い：{_text(paper['reading_question'])}",
-        f"- 他の候補との差：{_text(paper['marginal_value'])}",
         f"- 推奨学習順（必須依存ではない）：{prerequisite_text}",
     ]
     if paper.get("required_background"):
@@ -281,12 +280,13 @@ def _paper_lines(paper: dict, *, card: bool) -> list[str]:
         )
     selection = paper.get("selection")
     if selection:
-        lines.extend([
-            f"- 選定判断：{_text(selection['decision'])}",
-            f"- 重要性：{_text(selection['importance'])}",
-            f"- 選定上の補完性・代替との関係：{_text(selection['alternative'])}",
-            f"- 確信度：{_text(selection['confidence'])}",
-        ])
+        lines.append(f"- 選定判断：{_text(selection['decision'])}")
+        # Omit only identical rendered text; distinct editorial judgments remain.
+        if _text(selection['importance']) != _text(paper['reason_to_read']):
+            lines.append(f"- 重要性：{_text(selection['importance'])}")
+        if _text(selection['alternative']) != _text(paper['marginal_value']):
+            lines.append(f"- 選定上の補完性・代替との関係：{_text(selection['alternative'])}")
+        lines.append(f"- 確信度：{_text(selection['confidence'])}")
     return lines
 
 
