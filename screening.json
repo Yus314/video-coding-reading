@@ -80,6 +80,30 @@
       "locator": "§III; Fig.2; §IV-A; §V（定義中心）; References [10]",
       "checked_on": "2026-09-24",
       "detail": "followup-review.md"
+    },
+    {
+      "candidate": "GRACE: Loss-Resilient Real-Time Video through Neural Codecs",
+      "identifier": "https://www.usenix.org/conference/nsdi24/presentation/cheng",
+      "source_url": "https://www.usenix.org/system/files/nsdi24-cheng.pdf",
+      "locator": "Abstract; §1 Introduction, footnote 1",
+      "version_inspected": "NSDI 2024 proceedings PDF, extracted text",
+      "decision": "保留（損失耐性の枝を深める時に設計・比較条件を監査）",
+      "discovered_by": "video compression packet loss error resilience tutorial review",
+      "reason": "受信欠落時の復号と参照状態の不一致は、通常のRD/速度経路だけでは覆えない。P12の代替順位ではなく別制約の候補。",
+      "inspection_scope": "要旨・序論・脚注1の抽出本文を確認。図画像、詳細設計、実験表、コードは未確認。改善率や端末fpsを推薦根拠に使わない。",
+      "checked_on": "2026-09-24"
+    },
+    {
+      "candidate": "Video quality assessment accounting for temporal visual masking of local flicker",
+      "identifier": "https://www.colorado.edu/lab/live/video-quality-assessment-accounting-temporal-visual-masking-local-flicker",
+      "source_url": "https://www.colorado.edu/lab/live/video-quality-assessment-accounting-temporal-visual-masking-local-flicker",
+      "locator": "Introduction; Relevant publication",
+      "version_inspected": "LIVE research page, cites Choi/Bovik, Signal Processing: Image Communication 67, 182–198, 2018",
+      "decision": "保留（時間的歪みと見え方の評価候補）",
+      "discovered_by": "video compression temporal consistency flicker perceptual quality assessment",
+      "reason": "時間的変動の存在と知覚される劣化を区別する候補。P15の理論やIC08の評価手続の代替ではない。",
+      "inspection_scope": "研究室の研究紹介本文・書誌を確認。論文PDF本文・図画像・比較実験は未確認。現在の最良指標とは扱わない。",
+      "checked_on": "2026-09-24"
     }
   ]
 }

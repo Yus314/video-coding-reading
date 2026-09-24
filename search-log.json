@@ -86,6 +86,51 @@
         "HEVCは大学講義用コピーを読んだ。原著者/出版社の現存する正規本文経路は未確保、転載しない。",
         "VVCはRWTH掲載版、AV1はarXiv v2。抽出本文の選択節と図題を確認し、全原図点検や性能再現は未実施。"
       ]
+    },
+    {
+      "id": "constraint-discovery-probe",
+      "checked_on": "2026-09-24",
+      "objective": "既存論文名を使わず、損失耐性と時間的知覚の不足領域から未知候補を発見できるか限定点検する。",
+      "queries": [
+        "video compression packet loss error resilience tutorial review",
+        "video compression temporal consistency flicker perceptual quality assessment"
+      ],
+      "search_result_limit_per_query": 4,
+      "result_urls": [
+        {
+          "query": "video compression packet loss error resilience tutorial review",
+          "urls": [
+            "https://www.ietf.org/rfc/rfc2448.html",
+            "https://www.usenix.org/system/files/nsdi24-cheng.pdf",
+            "https://www.mdpi.com/2076-3417/10/14/4923",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10007065/"
+          ]
+        },
+        {
+          "query": "video compression temporal consistency flicker perceptual quality assessment",
+          "urls": [
+            "https://ar5iv.labs.arxiv.org/html/2301.01069",
+            "https://arxiv.org/html/2605.18378v1",
+            "https://www.colorado.edu/lab/live/video-quality-assessment-accounting-temporal-visual-masking-local-flicker",
+            "http://www.live.ece.utexas.edu/publications/2018/LarkKwonChoi_SPIC_2018_Video_quality_assessment_accounting_for_temporal_visual_masking_of_local_flicker.pdf"
+          ]
+        }
+      ],
+      "discovery_and_followup": [
+        "各検索結果から目的に直結する候補を一つ選んで出典を抽出。全結果の本文スクリーニングではない。",
+        "GRACEはNSDI本文の要旨・序論・脚注1を確認。FS-MOVIEは研究室の研究紹介と書誌を確認。",
+        "論文名なしの検索だが、既存案内の空白を見て検索語を作った探索であり名簿を伏せた独立探索ではない。"
+      ],
+      "changed_decisions": [
+        "損失耐性と時間的visual maskingを保留候補としてscreeningへ登録。主候補・共通キューは増やさない。"
+      ],
+      "stopping_reason": "二つの不足領域に具体的な確認先と未確認事項を得たため、この限定点検を終了。検索再現率・未知候補発見率・飽和は未測定。",
+      "not_executed": [
+        "検索結果全件の適格性判断",
+        "引用網追跡",
+        "性能比較・実験再現",
+        "2026年の網羅走査"
+      ]
     }
   ]
 }
