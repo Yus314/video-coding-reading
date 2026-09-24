@@ -124,7 +124,7 @@
       "selected_by": "assistant",
       "code_reproduced": false,
       "checked_on": "2026-09-24",
-      "discovery_route": "前回答の多様な種",
+      "discovery_route": "初期候補リスト",
       "queue": "目的別経路",
       "required_background": [
         "局所復号ループを説明できる",
@@ -176,7 +176,7 @@
       "selected_by": "assistant",
       "code_reproduced": false,
       "checked_on": "2026-09-24",
-      "discovery_route": "前回答の多様な種",
+      "discovery_route": "初期候補リスト",
       "queue": "目的別経路",
       "required_background": [
         "参照画像と表示画像の違いを意識できる",
@@ -373,7 +373,7 @@
       "selected_by": "assistant",
       "code_reproduced": false,
       "checked_on": "2026-09-24",
-      "discovery_route": "前回答の多様な種",
+      "discovery_route": "初期候補リスト",
       "queue": "目的別経路",
       "evidence_claims": [
         {
@@ -482,7 +482,7 @@
       "selected_by": "assistant",
       "code_reproduced": false,
       "checked_on": "2026-09-24",
-      "discovery_route": "前回答の多様な種",
+      "discovery_route": "初期候補リスト",
       "queue": "目的別経路",
       "evidence_claims": [
         {
@@ -578,7 +578,7 @@
       "selected_by": "assistant",
       "code_reproduced": false,
       "checked_on": "2026-09-24",
-      "discovery_route": "前回答の多様な種",
+      "discovery_route": "初期候補リスト",
       "queue": "目的別経路",
       "required_background": [
         "特徴contextを使う基本構造を説明できる",
@@ -607,7 +607,7 @@
       "reason_to_read": "BD値を読む際の補間・区間・測定誤差を学ぶ。",
       "reading_question": "小さなBD差を本当の改善と判断するには何を確認するか。",
       "marginal_value": "手法提案のP08/P10/P12とは役割が異なり、比較の誤読を抑える。",
-      "limitations": "今回は要旨・導入を中心に確認。全数値実験の検算は未実施。",
+      "limitations": "要旨・導入を中心に確認。全数値実験の検算は未実施。",
       "evidence_depth": "本文抜粋確認",
       "evidence_url": "https://arxiv.org/html/2304.12852",
       "evidence_locator": "arXiv v2 Abstract / Introduction",
@@ -615,7 +615,7 @@
       "selected_by": "assistant",
       "code_reproduced": false,
       "checked_on": "2026-09-24",
-      "discovery_route": "前回答の多様な種",
+      "discovery_route": "初期候補リスト",
       "queue": "評価時に参照",
       "evidence_claims": [
         {
@@ -659,7 +659,7 @@
       "selected_by": "assistant",
       "code_reproduced": false,
       "checked_on": "2026-09-24",
-      "discovery_route": "前回答の多様な種",
+      "discovery_route": "初期候補リスト",
       "queue": "評価時に参照",
       "evidence_claims": [
         {

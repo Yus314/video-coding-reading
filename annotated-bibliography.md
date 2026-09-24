@@ -2,8 +2,6 @@
 
 # 注釈付き文献一覧
 
-リリース：reading-entry-6
-
 範囲：登録候補20論文＋補助資料3件。目的限定参照・独立探索の対応と採否はscreening.json、followup-review.md、independent-review.json。全員向け必読順位・網羅調査ではない。
 
 `prerequisites` は必須依存関係ではなく、推奨学習順を表します。
@@ -64,7 +62,7 @@
 - 識別子：https://www.microsoft.com/en-us/research/publication/overview-of-the-versatile-video-coding-vvc-standard-and-its-applications/
 - 論文：[公開ページ](<https://www.microsoft.com/en-us/research/publication/overview-of-the-versatile-video-coding-vvc-standard-and-its-applications/>)
 - 分類：従来型 / 全体像 / 目的別経路
-- 発見経路：前回答の多様な種
+- 発見経路：初期候補リスト
 - 推奨学習順（必須依存ではない）：[P02](<papers/P02.md>)
 - 必要な背景知識：局所復号ループを説明できる, HEVCのCU/PU/TUの区別を参照できる
 - 限界・注意：要旨中の削減率を普遍的性能差にしない。VTMと実用実装を区別する。 確認版：IEEE TCSVT 31(10), 3736–3764, 2021。RWTH repository提供の出版社組版本文。本文の date of current version は October 4, 2021。arXiv版や別のVVC概説と混同しない。
@@ -88,7 +86,7 @@
 - 識別子：arXiv:2008.06091
 - 論文：[公開ページ](<https://arxiv.org/abs/2008.06091>)
 - 分類：従来型 / 別系統 / 目的別経路
-- 発見経路：前回答の多様な種
+- 発見経路：初期候補リスト
 - 推奨学習順（必須依存ではない）：[P01](<papers/P01.md>)
 - 必要な背景知識：参照画像と表示画像の違いを意識できる, エンコーダ探索と規範的復号処理を区別する
 - 限界・注意：確認版はarXiv:2008.06091v2（2021-02-08）。分割・ループ内/外処理等の指定節本文を確認。出版社最終版との同一性、最新AV1実装の性能、全文精読・実験条件監査は未確認。
@@ -178,7 +176,7 @@
 - 識別子：https://openaccess.thecvf.com/content_CVPR_2019/html/Lu_DVC_An_End-To-End_Deep_Video_Compression_Framework_CVPR_2019_paper.html
 - 論文：[公開ページ](<https://openaccess.thecvf.com/content_CVPR_2019/html/Lu_DVC_An_End-To-End_Deep_Video_Compression_Framework_CVPR_2019_paper.html>)
 - 分類：学習型 / 転換点 / 目的別経路
-- 発見経路：前回答の多様な種
+- 発見経路：初期候補リスト
 - 推奨学習順（必須依存ではない）：[P01](<papers/P01.md>), [P06](<papers/P06.md>), [P07](<papers/P07.md>)
 - 必要な背景知識：予測残差と動きの符号量を区別できる, 量子化した参照から再構成するループを説明できる
 - 限界・注意：主結果は特定のFFmpeg設定。別実装・presetへの優位性に拡張しない。
@@ -225,7 +223,7 @@
 - 識別子：arXiv:2109.15047
 - 論文：[公開ページ](<https://proceedings.neurips.cc/paper_files/paper/2021/hash/96b250a90d3cf0868c83f8c965142d2a-Abstract.html>)
 - 分類：学習型 / 転換点 / 目的別経路
-- 発見経路：前回答の多様な種
+- 発見経路：初期候補リスト
 - 推奨学習順（必須依存ではない）：[P07](<papers/P07.md>), [P08](<papers/P08.md>)
 - 必要な背景知識：動き＋残差型の情報経路を説明できる, 副情報から復号側で確率モデルを再現する意味が分かる
 - 限界・注意：DVC原著と比較条件が異なる。著者らによる同条件での再評価と原著値を区別する。
@@ -270,7 +268,7 @@
 - 識別子：arXiv:2502.20762
 - 論文：[公開ページ](<https://openaccess.thecvf.com/content/CVPR2025/html/Jia_Towards_Practical_Real-Time_Neural_Video_Compression_CVPR_2025_paper.html>)
 - 分類：学習型 / 実装制約 / 目的別経路
-- 発見経路：前回答の多様な種
+- 発見経路：初期候補リスト
 - 推奨学習順（必須依存ではない）：[P10](<papers/P10.md>)
 - 必要な背景知識：特徴contextを使う基本構造を説明できる, 処理速度の測定範囲とend-to-end遅延を区別する必要を理解する
 - 限界・注意：A100・fp16の著者報告。確認した公開実装はI/O・画質計算・先頭10フレームを速度平均から除外。論文実験snapshotとの同一性と数値再現は未確認。evidence-audit.md参照。
@@ -291,10 +289,10 @@
 - 識別子：arXiv:2304.12852
 - 論文：[公開ページ](<https://arxiv.org/html/2304.12852>)
 - 分類：評価 / 評価批判 / 評価時に参照
-- 発見経路：前回答の多様な種
+- 発見経路：初期候補リスト
 - 推奨学習順（必須依存ではない）：[P06](<papers/P06.md>)
 - 必要な背景知識：基本的な確率・信号処理の用語
-- 限界・注意：今回は要旨・導入を中心に確認。全数値実験の検算は未実施。
+- 限界・注意：要旨・導入を中心に確認。全数値実験の検算は未実施。
 - 根拠の確認範囲：本文抜粋確認 — arXiv v2 Abstract / Introduction
 - 根拠資料：[原文](<https://arxiv.org/html/2304.12852>)
 - 読書状態：候補・利用者未読状態は未確認
@@ -312,7 +310,7 @@
 - 識別子：arXiv:2409.08772
 - 論文：[公開ページ](<https://arxiv.org/html/2409.08772>)
 - 分類：評価 / 評価批判 / 評価時に参照
-- 発見経路：前回答の多様な種
+- 発見経路：初期候補リスト
 - 推奨学習順（必須依存ではない）：[P13](<papers/P13.md>)
 - 必要な背景知識：基本的な確率・信号処理の用語
 - 限界・注意：特定比較の例を全学習型研究の誤りと一般化しない。重み付けの目的も明示する。

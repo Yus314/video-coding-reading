@@ -291,10 +291,8 @@ def _paper_lines(paper: dict, *, card: bool) -> list[str]:
 
 
 def render(catalog: dict, papers: list[dict], relations: list[dict]) -> dict[Path, bytes]:
-    release = _text(catalog.get("release", "未指定"))
     scope = _text(catalog.get("scope", ""))
-    bibliography = [GENERATED_HEADER, "", "# 注釈付き文献一覧", "",
-                    f"リリース：{release}"]
+    bibliography = [GENERATED_HEADER, "", "# 注釈付き文献一覧"]
     if scope:
         bibliography.extend(["", f"範囲：{scope}"])
     bibliography.extend(["", "`prerequisites` は必須依存関係ではなく、推奨学習順を表します。", ""])

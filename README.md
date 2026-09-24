@@ -29,7 +29,7 @@
 
 ### なぜこれらを選んだか確かめたい
 
-[選定と見直しの記録](selection-review.md)を参照してください。[全候補の注釈](annotated-bibliography.md)は資料を探す索引であり、全件の読了要求ではありません。
+[文献の選定理由](selection-review.md)を参照してください。[全候補の注釈](annotated-bibliography.md)は資料を探す索引であり、全件の読了要求ではありません。
 
 ## 資料と確認範囲
 

@@ -59,6 +59,12 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(catalog.CatalogError, fragment):
             catalog.validate(self.root)
 
+    def test_bibliography_omits_internal_release_label(self):
+        catalog.build(self.root)
+        text = (self.root / "annotated-bibliography.md").read_text(encoding="utf-8")
+        self.assertNotIn("リリース：", text)
+        self.assertIn("範囲：fixture", text)
+
     def test_reading_question_precedes_bibliographic_metadata(self):
         for card in (True, False):
             text = "\n".join(catalog._paper_lines(paper(), card=card))
