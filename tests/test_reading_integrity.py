@@ -13,6 +13,18 @@ def load(name):
 
 
 class ReadingIntegrityTests(unittest.TestCase):
+    def test_nnpf_guide_navigation_and_citation_ids(self):
+        guide = (ROOT / 'nnpf-reading.md').read_text(encoding='utf-8')
+        for name in ('README.md', 'reading-queue.md'):
+            self.assertIn('](nnpf-reading.md)', (ROOT / name).read_text(encoding='utf-8'))
+        body, sources = guide.split('Sources:', 1)
+        used = set(re.findall(r'\[(\d+)\]', body))
+        listed = re.findall(r'^\[(\d+)\] https?://\S+', sources, re.MULTILINE)
+        self.assertTrue(used)
+        self.assertEqual(used, set(listed))
+        self.assertEqual(len(listed), len(set(listed)))
+        self.assertNotIn('/home/', guide)
+
     def test_authored_and_generated_relative_links(self):
         for path in ROOT.rglob('*.md'):
             for raw in re.findall(r'\]\((<[^>]*>|[^)\s]+)\)', path.read_text(encoding='utf-8')):

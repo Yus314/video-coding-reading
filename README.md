@@ -6,6 +6,8 @@
 
 分野全体の勉強を始める前に、目的に合う作業を一つ選べます。所要時間は未測定です。
 
+- **NNPFの会合寄書を理解する**：[NNPF読書案内](nnpf-reading.md)。H.274 V4の指定節 → V5作業草案 → AQ0155 v2から、現行動作・問題・変更案・互換性・提案の状態を追う。第44回JVET（杭州）向けの準備で、全寄書の網羅一覧ではありません。
+
 - **圧縮器の基本構造**：[HEVCの案内](conventional-reading.md)からP02 **II-A / Fig.1**。原画像と再構成参照の違いを追う。両者がなぜ必要か説明できたら、他の規格の全ツール一覧は後回し。
 - **学習型の副情報**：[Hyperprior原文](https://arxiv.org/pdf/1802.01436v2) **§3 / Fig.4**。`zの復号 → 確率パラメータ → yの復号`を追う。[六つの問い](reading-lab.md)は分からない箇所だけ使う。
 - **別論文へ読み方を応用**：[Scale-Space Flow原文](https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf) **Fig.2 / §3.2**。DVC等で動き・残差の基本を理解済みなら、動きlatentからResidual Decoderへの接続も追い、[案内末尾のP09例](reading-lab.md)と照合する。性能表は今は不要。
@@ -37,6 +39,8 @@
 [文献の選定理由](selection-review.md)を参照してください。[全候補の注釈](annotated-bibliography.md)は資料を探す索引であり、全件の読了要求ではありません。
 
 ## 資料と確認範囲
+
+[NNPF読書案内](nnpf-reading.md)は、規格・作業草案・TuC・会合寄書を扱う目的別資料です。以下の主候補20論文とは別に整理し、確認した版・箇所・未確認事項は同案内に記載しています。
 
 登録候補20論文、補助資料S01–S03に加え、目的限定の論文参照F01/F02と保留候補があります。分類を分けても資料が増える事実は変わりません。既存の採否は [screening.json](screening.json)、探索経路は [search-log.json](search-log.json)。追加の[独立探索8候補と採否](independent-review.md)には既存論文2件も含まれ、書籍・規格・教材・実装文書を論文数へ混ぜていません。検索式と確認範囲は [independent-review.json](independent-review.json)に記録します。
 
