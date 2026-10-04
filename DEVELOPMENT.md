@@ -41,6 +41,8 @@ python3 scripts/catalog.py check --root /tmp/catalog-fixture
 
 ## 読書案内の整合検査
 
+`nnpf-compatibility-walkthrough.md`の局所ビット例は`python3 scripts/nnpf_compat_example.py`で実行できる。これは説明用の部分モデルであり、実decoder・SEI payload・適合bitstreamの試験ではない。予約範囲の不整合を解消したと主張しない。
+
 `nnpf-reading.md`は手編集の会合準備ガイドで、主候補論文の自動生成カードとは別に管理する。本文の出典番号は同ページ末尾の出典一覧に対応する。対象会合、確認基準日、規格・WD・TuC・個別提案の区別と確認範囲を保持し、第三者の原文や抽出全文は収録しない。
 
 `nnpf-aq0155-walkthrough.md`は原文対照の読解例、`nnpf-aq0155-evidence.json`はその版・位置・確認方法の記録。出典番号とリンクの検査は構造整合に限り、削除後の構文の妥当性、採否、実装適合性の証明ではない。
