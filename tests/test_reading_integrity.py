@@ -35,6 +35,23 @@ class ReadingIntegrityTests(unittest.TestCase):
                 with self.subTest(page=path.name, target=target):
                     self.assertTrue((path.parent / dest).is_file())
 
+    def test_nnpf_walkthrough_evidence_and_sources_resolve(self):
+        evidence = load('nnpf-aq0155-evidence.json')
+        guide = (ROOT / evidence['guide']).read_text(encoding='utf-8')
+        body, sources = guide.split('Sources:', 1)
+        used = set(re.findall(r'\[(\d+)\]', body))
+        listed = re.findall(r'^\[(\d+)\] https?://\S+', sources, re.MULTILINE)
+        self.assertEqual(used, set(listed))
+        self.assertEqual(len(listed), len(set(listed)))
+        observations = evidence['observations']
+        self.assertEqual(len(observations), len({o['id'] for o in observations}))
+        for item in observations:
+            self.assertIn(str(item['source_id']), used)
+            for field in ('version', 'locator', 'method', 'observed'):
+                self.assertTrue(item[field].strip())
+        self.assertIn(str(evidence['public_register']['source_id']), used)
+        self.assertNotIn('/home/', guide)
+
     def test_independent_candidates_have_decisions_and_valid_aliases(self):
         papers = {p['id']: p for p in load('papers.json')['papers']}
         candidates = load('independent-review.json')['candidates']

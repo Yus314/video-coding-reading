@@ -1,0 +1,93 @@
+{
+  "checked_on": "2026-10-04",
+  "guide": "nnpf-aq0155-walkthrough.md",
+  "scope": "Selected text, rendered pages and DOCX revision XML; not implementation or full-document visual certification.",
+  "observations": [
+    {
+      "id": "base-update",
+      "source_id": 2,
+      "version": "H.274 V4 (01/2026)",
+      "locator": "8.28.1.2; printed p.106",
+      "method": "official PDF selected text",
+      "observed": "Each update is applied to the base NNPF, not cumulatively to a previous update."
+    },
+    {
+      "id": "format-proposal",
+      "source_id": 10,
+      "version": "JVET-AQ0155-v2.docx",
+      "locator": "3.1 Proposal 1; rendered p.2",
+      "method": "text and rendered page",
+      "observed": "Same tag URI when present in both base/update; otherwise the stated NNR cases. This is not a blanket same-mode-idc requirement."
+    },
+    {
+      "id": "gate-revision",
+      "source_id": 10,
+      "version": "JVET-AQ0155-v2.docx",
+      "locator": "3.2 Proposal 2; rendered p.3 syntax, p.4 deleted material",
+      "method": "rendered deletion and DOCX w:del inspection",
+      "observed": "== 0 && !NnpfcNnrFormatFlag is deleted; the remaining condition is if( nnpfc_base_flag )."
+    },
+    {
+      "id": "parameter-types",
+      "source_id": 10,
+      "version": "JVET-AQ0155-v2.docx",
+      "locator": "rendered p.3 Table X; p.4 deleted table",
+      "method": "text and rendered pages",
+      "observed": "0 replaces corresponding parameter values; 1..13 reserved; 14..15 application-determined. Do not merge the deleted table into this one."
+    },
+    {
+      "id": "tuc-update",
+      "source_id": 14,
+      "version": "JVET-AQ2032-v4.zip containing JVET-AQ2032-v3.docx",
+      "locator": "rendered pp.46–47; Table XXX",
+      "method": "text, rendered pages and syntax XML",
+      "observed": "Base-flag gate and update type meanings match inspected AQ0155 v2. Present-flag descriptor is blank; semantics also uses nnpfc_update_type without _idc."
+    },
+    {
+      "id": "tuc-format-unresolved",
+      "source_id": 14,
+      "version": "JVET-AQ2032-v4.zip containing JVET-AQ2032-v3.docx",
+      "locator": "integration list, NNPF sections, whole-text targeted searches",
+      "method": "selected reading and search, not a rejection decision",
+      "observed": "AQ0155 is listed, but corresponding Proposal 1 constraint not located. Adoption/rejection and reasons remain unresolved."
+    },
+    {
+      "id": "ar-boundary",
+      "source_id": 3,
+      "version": "JVET-AR0041-v4_spexText.docx",
+      "locator": "NNPFC semantics tag URI; whole-text update-type search",
+      "method": "selected text, no AR redline visual review",
+      "observed": "Framework/version tag URI text found; nnpfc_update_type not found. Do not equate this V5 WD1 full text with the TuC update extension."
+    }
+  ],
+  "visual_review": {
+    "renderer": "LibreOffice 25.8.5.2; PDFium rasterization",
+    "pages": {
+      "JVET-AQ0155-v2.docx": [
+        2,
+        3,
+        4
+      ],
+      "JVET-AQ2032-v3.docx": [
+        46,
+        47
+      ]
+    },
+    "limitation": "Import/layout warnings; key revision checked independently in XML. Native Word rendering not checked."
+  },
+  "public_register": {
+    "source_id": 4,
+    "date": "2026-10-04",
+    "methods": [
+      "register without filters",
+      "register CSV"
+    ],
+    "visible_ids": [
+      "JVET-AR0041",
+      "JVET-AR0042",
+      "JVET-AR0043",
+      "JVET-AR0044"
+    ],
+    "limitation": "Only public visible entries; no automatic monitoring and no claim that unlisted contributions do not exist."
+  }
+}

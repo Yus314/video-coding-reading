@@ -8,6 +8,8 @@
 
 - **NNPFの会合寄書を理解する**：[NNPF読書案内](nnpf-reading.md)。H.274 V4の指定節 → V5作業草案 → AQ0155 v2から、現行動作・問題・変更案・互換性・提案の状態を追う。第44回JVET（杭州）向けの準備で、全寄書の網羅一覧ではありません。
 
+  最初の一件を具体的に読むなら、[AQ0155 v2の原文対照付き読解例](nnpf-aq0155-walkthrough.md)。更新操作の具体例と、変更履歴を読む際の注意点を示します。
+
 - **圧縮器の基本構造**：[HEVCの案内](conventional-reading.md)からP02 **II-A / Fig.1**。原画像と再構成参照の違いを追う。両者がなぜ必要か説明できたら、他の規格の全ツール一覧は後回し。
 - **学習型の副情報**：[Hyperprior原文](https://arxiv.org/pdf/1802.01436v2) **§3 / Fig.4**。`zの復号 → 確率パラメータ → yの復号`を追う。[六つの問い](reading-lab.md)は分からない箇所だけ使う。
 - **別論文へ読み方を応用**：[Scale-Space Flow原文](https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf) **Fig.2 / §3.2**。DVC等で動き・残差の基本を理解済みなら、動きlatentからResidual Decoderへの接続も追い、[案内末尾のP09例](reading-lab.md)と照合する。性能表は今は不要。
